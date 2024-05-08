@@ -1,0 +1,77 @@
+/* OrderList.css */
+
+.order-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .order-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+ 
+  .order-box {
+    border: 1px solid #e0e0e0;
+    
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    width:400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-id {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .order-date {
+    font-size: 14px;
+    color: #888888;
+  }
+  
+  .order-details {
+    margin-top: 10px;
+  }
+  
+  .order-details p {
+    margin-bottom: 8px;
+  }
+  
+  .order-items ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .order-items li {
+    margin-bottom: 4px;
+  }
+  
+  .order-total {
+    font-weight: bold;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .order-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  .dashboard-link {
+    background-color: white; /* Change the background color */
+    color: black; /* Change the text color */
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }

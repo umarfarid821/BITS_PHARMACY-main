@@ -1,0 +1,49 @@
+/* AdminList.css */
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+  }
+  .chg{
+    margin-left: 300px;
+    margin-right:10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #cc0000;
+  }
+  

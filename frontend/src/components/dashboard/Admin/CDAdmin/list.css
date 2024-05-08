@@ -1,0 +1,146 @@
+.my-change{
+    padding-left: 300px;
+}
+/* Custom styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pad1{
+    padding-left: 300px;
+    padding-right:10px;
+
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Custom styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-card {
+    background-color: white;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 500px;
+  }
+  
+  .modal-card-head {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-card-title {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .modal-card-body {
+    padding-bottom: 20px;
+  }
+  
+  .modal-card-foot {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    text-align: right;
+  }
+  
+  .modal-card-foot button {
+    margin-left: 10px;
+  }
+  
+  .modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  table {
+    @apply w-full;
+  }
+  
+  thead {
+    @apply hidden lg:table-header-group;
+  }
+  
+  tr {
+    @apply max-w-full block relative border-b-4 border-gray-100
+      lg:table-row lg:border-b-0;
+  }
+  
+  tr:last-child {
+    @apply border-b-0;
+  }
+  
+  th {
+    @apply lg:text-left lg:py-2 lg:px-3;
+  }
+  
+  td {
+    @apply flex justify-between text-right py-3 px-4 align-top border-b border-gray-100
+      lg:table-cell lg:text-left lg:py-2 lg:px-3 lg:align-middle lg:border-b-0;
+  }
+  
+  tr:nth-child(odd) td {
+    @apply lg:bg-gray-50;
+  }
+  
+  td:last-child {
+    @apply border-b-0;
+  }
+  
+  tbody tr:hover td {
+    @apply lg:bg-gray-100;
+  }
+  
+  td:before {
+    content: attr(data-label);
+    @apply font-semibold pr-3 text-left lg:hidden;
+  }
+  
+  td.checkbox-cell, th.checkbox-cell {
+    @apply lg:w-5;
+  }
+  
+  td.progress-cell progress {
+    @apply flex w-2/5 self-center
+      lg:w-full;
+  }
+  
+  td.image-cell {
+    @apply border-b-0 lg:w-6;
+  }
+  
+  td.image-cell:before, td.actions-cell:before {
+    @apply hidden;
+  }
+  
+  td.image-cell .image {
+    @apply w-24 h-24 mx-auto lg:w-6 lg:h-6;
+  }
+  
+  .table-pagination {
+    @apply px-6 py-3 border-t border-gray-100;
+  }
+  

@@ -1,0 +1,44 @@
+/* profile-styles.css */
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    
+  }
+  
+  .profile-content {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .profile-content h2 {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+  
+  .profile-content h2.highlight {
+    background-color: #007bff; /* Highlighted background color */
+    color: #fff; /* Text color for highlighted elements */
+  }
+  
+  .profile-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

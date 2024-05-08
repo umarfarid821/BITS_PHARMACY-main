@@ -1,0 +1,38 @@
+/* AddProfile.css */
+
+.add-profile-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+  
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    padding-top: 90px;
+  }
+  
+  .form-label {
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #000;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    color: gray;
+  }
+  
+  .form-button {
+    width: 100%;
+  }
+  

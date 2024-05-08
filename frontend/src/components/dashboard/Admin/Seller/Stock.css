@@ -1,0 +1,104 @@
+/* Stock.css */
+
+.add-medicine-card {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 1000px;
+}
+.slide {
+  height: 100vh;
+ 
+   /* Set height to fill viewport */
+   padding-left: 300px;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+
+
+/* Stock.css */
+
+/* ... (previous styles) */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.medicine-info {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-body {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* ... (remaining styles) */

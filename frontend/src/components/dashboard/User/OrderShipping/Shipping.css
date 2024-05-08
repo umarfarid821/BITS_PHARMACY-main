@@ -1,0 +1,58 @@
+/* CheckoutPage.css */
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .shipping-address,
+  .payment-method,
+  .order-summary {
+    margin-bottom: 20px;
+  }
+  
+  .shipping-address input,
+  .payment-method select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .payment-method select {
+    padding: 8px;
+  }
+  
+  .order-summary ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-summary li {
+    margin-bottom: 5px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

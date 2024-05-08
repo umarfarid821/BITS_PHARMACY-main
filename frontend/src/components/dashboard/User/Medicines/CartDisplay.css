@@ -1,0 +1,122 @@
+/* CartDisplay.css */
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar-title {
+    font-size: 20px;
+  }
+  
+  .add-product-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #218838;
+  }
+  
+  .cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cart-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .product-price {
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .product-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .product-quantity button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+  }
+  
+  .total-price {
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 5px;
+  }
+  
+  .remove-product-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .remove-product-btn:hover {
+    background-color: #ff3b20;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .cart-container {
+      padding: 10px;
+    }
+  }
+  
