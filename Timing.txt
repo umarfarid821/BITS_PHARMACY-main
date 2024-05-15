@@ -18,3 +18,4 @@ mon   6-05-2024  3pm to 10pm
 tuesday  7-05-2024  5.30pm to 10.20 pm 
 --
 wed      8-05-2024   3.pm to 6.55pm 
+wed      15-5-2024     4pm  to 9 pm 

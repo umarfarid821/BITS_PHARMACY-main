@@ -1,0 +1,16 @@
+.my{
+
+    background-image: url('./images/hero_1.jpg'); /* Add background image */
+    background-size: cover; /* Add background size */
+    background-position: center; /* Add background position */
+    padding: 7em 0; /* Add padding */
+    color: #fff; /* Add color */
+    text-align: center; /* Add text align */
+    position: relative; /* Add position */
+    height: 100vh; /* Add height */
+
+}
+
+.fix{
+  padding-top:100px;
+}

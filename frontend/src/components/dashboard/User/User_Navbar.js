@@ -29,6 +29,8 @@ const handleLogout = () => {
   window.location.href = '/'; // Replace with the actual route for your landing page
 };
 
+
+//mnn
 class Navbar extends React.Component {
   render() {
     return (
