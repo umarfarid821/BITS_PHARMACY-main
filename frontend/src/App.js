@@ -28,6 +28,7 @@ import UserFeedback from "./components/dashboard/User/OrderShipping/UserFeedback
 import DeliveryWorker from "./components/dashboard/Admin/DeliveryWorker/CreateWorker";
 import Seefedback from "./components/dashboard/Admin/Feedback";
 import OnlyProfile  from './components/dashboard/Admin/Profile/OnlyProfile';
+import AboutPage from './components/dashboard/User/About';
 const App = ()=>{
   const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null); 
@@ -69,6 +70,7 @@ const App = ()=>{
         <Route path="/user/shipping" element={<Shipping/>}/>
         <Route path="/user/pastorders" element={<PastOrders/>}/>
         <Route path="/user/feedback" element={<UserFeedback/>}/>
+        <Route path="/user/about" element={<AboutPage/>}/>
       </Routes>
       
       </BrowserRouter>

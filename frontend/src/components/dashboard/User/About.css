@@ -7,14 +7,16 @@
     color: #fff; /* Add color */
     text-align: center; /* Add text align */
     position: relative; /* Add position */
-    height: 100vh; /* Add height */
+    height: 60vh; /* Add height */
 
 }
 
 .fix{
   padding-top:100px;
 }
-.scroll {
-  overflow-y: scroll; /* Enable vertical scrolling */
-  height: 100vh; /* Set the height to occupy the full viewport height */
-}
+
+.overflow-scroll {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 100vh; /* Set the height to occupy the full viewport height */
+  }
+ 

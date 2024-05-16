@@ -28,6 +28,10 @@ const handleLogout = () => {
   localStorage.removeItem('UserToken');
   window.location.href = '/'; // Replace with the actual route for your landing page
 };
+const AboutPage=()=>{
+  window.location.href = '/user/about';
+}
+
 
 
 //mnn
@@ -52,7 +56,7 @@ class Navbar extends React.Component {
               <a className="nav-link" onClick={handleCartDisplay} >Cart Display</a>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
+            <a className="nav-link" onClick={AboutPage}>About</a>
           </li>
             <li className="nav-item">
               <a className="nav-link disabled" href="#">Disabled</a>

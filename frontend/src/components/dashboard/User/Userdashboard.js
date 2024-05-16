@@ -2,6 +2,7 @@ import React from 'react';
 import Img3 from './images/3.jpg';
 import Navbar from './User_Navbar';
 import Hero from './images/hero_1.jpg';
+import Footer from './Footer';
 import './Dashboard.css';
 import { Button } from 'react-bootstrap';
 const LandingPage = () => {
@@ -10,7 +11,7 @@ const LandingPage = () => {
     window.location.href = '/user/stockmedicines';
   };
   return (
-    <div>
+    <div className='scroll'>
       <Navbar />
       <div className="site-blocks-cover my " >
         <div className="container">
@@ -25,6 +26,10 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+      <Footer />
       </div>
     </div>
   );
