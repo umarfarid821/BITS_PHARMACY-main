@@ -45,7 +45,7 @@ const Sidebar = () => {
         <i className="bx bxl-c-plus-plus"></i>
         <span className="logo_name">Bits Pharmacy</span>
       </div>
-      <ul className="nav-links my">
+      <ul className="nav-links myadmin">
         <li>
           <button className="active  back" onClick={Home}>
             <i className="bx bx-grid-alt"></i>

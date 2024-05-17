@@ -1,120 +1,23 @@
-/* Stock.css */
+.left-pad{
 
-/* Medicine Container Styles */
-.medicine-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Medicine List Styles */
-  .medicine-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  /* Medicine Card Styles */
-  .medicine-card {
-    
-    background-color: blue;
-    text-color: 006d77;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  
-   
-  
-    &:hover {
-      transform: translateY(-5px);
-    }
-  
-    h3 {
-      margin-top: 0;
-        color: white;
-    }
-  
-    p {
-      margin: 8px 0;
-      color: white;
-    }
-  }
-  
-  /* Error Styles */
-  .error {
-    color: #ff0000;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  /* modalStyles.css */
-
-.modal-size{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content{
-    width: 500px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Add styles for the modal overlay and content */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   padding-left: 40px;
 }
 
-.modal-content {
-  background: blue;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
+.scroll-admin {
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 100vh; /* Set the height to occupy the full viewport height */
 }
 
-.close-button {
- 
-  cursor: pointer;
-  color: black;
-
+.container-stock{
+  padding-left: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
 }
-
-.Delete{
-  background-color:red;
-}
-
-  
-.MedicineDetail{
-  background-color:green;
-}
-  
-.med{
-  color:white;
-}
-  
-.cardslider{
-  
-   /* Set height to fill viewport */
-   padding-left: 300px;
-  overflow-y: auto; /* Enable vertical scrolling */
+.stock-style{
+  border-radius: 28px;
+  border: 1px solid #000;
+  border-color: #000;
+  width: 400px;
+  padding-left: 20px;
 }
