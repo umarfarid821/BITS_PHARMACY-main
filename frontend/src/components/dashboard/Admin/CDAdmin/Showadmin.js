@@ -53,7 +53,7 @@ const AdminList = () => {
   };
 
   return (
-    <div my-change >
+    <div className="" >
       <h1>Admin List</h1>
      <div className="pad1">
      

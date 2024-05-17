@@ -13,6 +13,7 @@ import CreateAdmin from './components/dashboard/Admin/CDAdmin/createAdmin';
 import Dashboard from './components/dashboard/Admin/CDAdmin/dashboard';
 import ShowAdmin from './components/dashboard/Admin/CDAdmin/Showadmin';
 import SellerPage from './components/dashboard/Admin/Seller/sellerpage';
+import CreateSeller from './components/dashboard/Admin/Seller/createSeller';
 import SellerDetails from "./components/dashboard/Admin/Seller/Aseller";
 import SellerDashboard from "./components/dashboard/Admin/Seller/sellerDashboard";
 import AdminSeller from "./components/dashboard/Admin/Seller/adminSeller";
@@ -46,6 +47,7 @@ const App = ()=>{
         <Route path="/admin/editprofile" element={<EditProfile/>}/>
         <Route path="/admin/addprofile" element={<AddProfile/>}/>
         <Route path="/admin/showprofile" element={<ShowProfile/>}/>
+        <Route path="/admin/createsellercomponent" element={<CreateSeller/>}/>
         <Route path="/admin/adminpannel" element={<Dashboard/>}/>
 
         <Route path="/admin/create" element={<CreateAdmin/>}/>

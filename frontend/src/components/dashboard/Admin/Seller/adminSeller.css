@@ -1,0 +1,13 @@
+.adminSellerpad{
+    padding-top: 10px;
+}
+.details-admin{
+    padding-left: 300px;
+}
+.cart-slide{
+    height: 100vh;
+   
+    /* Set height to fill viewport */
+    
+   overflow-y: auto; /* Enable vertical scrolling */
+  }

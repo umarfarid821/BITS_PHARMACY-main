@@ -15,12 +15,10 @@
   max-width: 1000px;
 }
 .slide {
-  height: 100vh;
  
-   /* Set height to fill viewport */
-   padding-left: 300px;
-  overflow-y: auto; /* Enable vertical scrolling */
+  padding-left: 300px;
 }
+
 
 
 ul {

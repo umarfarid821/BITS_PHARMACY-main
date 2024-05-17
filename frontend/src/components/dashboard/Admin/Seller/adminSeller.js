@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import NavBar from '../Admina_Savbar';
 
 //import SellerProductsForm from './sellerProduct';
-import './SellerDetails.css'; // Import your CSS file
+import './adminSeller.css'; // Import your CSS file
 
 import AllMedicinesCart from './getmedicine';
 
@@ -36,29 +36,43 @@ const SellerDetails = () => {
   console.log('Seller name:', seller.name);
   return (
 
-    <div>
+    <div className='bg-dark cart-slide' >
         <NavBar />
-        <div className="seller-details-container">
+        <div className="adminSellerpad container">
+        <h1>Seller Details To Admin</h1>
       
-    <h1>Seller  Details</h1>
-    <div className="seller-info">
-      <p><strong>Name:</strong> {seller.name}</p>
-      <p><strong>Email:</strong> {seller.email}</p>
-      <p><strong>Phone Number:</strong> {seller.phoneNumber}</p>
-      <p><strong>Address:</strong> {seller.address}</p>
-      <p><strong>City:</strong> {seller.city}</p>
-      <p><strong>Username:</strong> {seller.username}</p>
-    </div>
+       <div className='details-admin'>
+       
+       <table className="table mt-3">
+       <tbody>
+         <tr>
+           <th>Username</th>
+           <th>Email</th>
+           <th>Phone Number</th>
+           <th>Address</th>
+           <th>Gender</th>
+           <th>Actions</th>
+         </tr>
+         <tr>
+           <td>{seller.username}</td>
+           <td>{seller.email}</td>
+           <td>{seller.phoneNumber}</td>
+           <td>{seller.address}</td>
+           <td>{seller.gender}</td>
+           <td> {/* Actions column, you can add buttons or links here */}</td>
+         </tr>
+       </tbody>
+     </table>
+       </div>
+      </div>
 
-    <div className="seller-products-form  ">
-    <AllMedicinesCart sellerName={seller.name} />
-     
-    </div>
-    <div>
-  
-    </div>
-   
-  </div>
+      <AllMedicinesCart sellerName={seller.name} />
+      
+
+       
+
+
+
     </div>
    
   );

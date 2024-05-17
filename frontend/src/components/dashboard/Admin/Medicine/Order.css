@@ -1,70 +1,53 @@
-:root {
-  font-size: 20px;
-}
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+
 .order-list-container {
   padding-left: 300px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.order-summary {
+  padding-top: 50px;
  
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
 }
-
-.summary-text {
-  font-size: 26px;
-  margin: 10px 0;
-  color: black;
-}
-.order-summary{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+.card-my-style{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-color: #ccc;
+  padding: 30px;
+ ;
 
 }
-.order-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+
+
+
+.p-style{
+  padding-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-color: #ccc;
+  padding: 30px;
+  font-size: 30px;
+  color: #000;
+  background-color: blue;
+
 }
+.p-style:hover{
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-color: #ccc;
+  padding: 10px;
+}
+
+
 .card-container {
   height: 100vh;
  
-   /* Set height to fill viewport */
-   padding-left: 300px;
+  
   overflow-y: auto; /* Enable vertical scrolling */
 }
-
-p {
-  margin: 0;
-}
-
-p:not(:last-child) {
-  margin-bottom: 1.5em;
+.card-padd{
+  padding-left: 400px;
 }
 
 
 
-.card {
-  width: 400px; /* Adjust the width as needed */
-  height: 800px; /* Adjust the height as needed */
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(15px);
-}
 
 
-.card-footer {
-  font-size: 0.65em;
-  color: #446;
-}
+

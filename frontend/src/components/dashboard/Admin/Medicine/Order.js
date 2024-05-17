@@ -79,52 +79,68 @@ console.log(totalOrders,todayOrders,totalOrdersYesterday);
 
 };
   return (
-   <div>
+   <div className="card-container bg-secondary">
    <NavBar/>
- <div className='order-list-container' >
- <div className="order-summary">
- <p className="summary-text">Total Orders: {totalOrders}</p>
- <p className="summary-text">Total Orders Today: {totalOrdersToday}</p>
- <p className="summary-text">Total Orders Yesterday: {totalOrdersYesterday}</p>
- <p className="summary-text">Total Sales: ${totalSales}</p>
-</div>
- <div></div>
- <div className="card-container">
- {orders.map((order) => (
-   <div className="card" key={order._id}>
-     <div className="order-header">
-       <p className="order-id">Order ID: {order._id}</p>
-       <p className="order-date">Order Date: {new Date(order.createdAt).toLocaleString()}</p>
-       <p> Order Status : {order.OrderStatus}</p>
-     </div>
-     <div className="order-details">
-       {order.shippingAddress && (
-         <p>Shipping Address:
-           Name: {order.shippingAddress.name},
-           Address: {order.shippingAddress.address},
-           City: {order.shippingAddress.city},
-           State: {order.shippingAddress.state}
-           PostalCode: {order.shippingAddress.postalCode}
-         </p>
-       )}
-       <p>Payment Method: {order.paymentMethod}</p>
-       <div className="order-items">
-         <p>Items:</p>
-         <ul>
-           {order.cartItems.map((item) => (
-             <li key={item._id}>
-               {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
-             </li>
-           ))}
-         </ul>
-       </div>
-       <p>Total Amount: ${order.totalAmount}</p>
-     </div>
-   </div>
- ))}
-</div>
  
+   <div className='order-list-container'>
+   <div  className='row  '>
+     <p className='p-style'>Total Orders: {totalOrders}</p>
+     <p className='p-style' >Total Orders Today: {totalOrdersToday}</p>
+     <p className='p-style'>Total Orders Yesterday: {totalOrdersYesterday}</p>
+     <p className='p-style'>Total Sales: ${totalSales}</p>
+   </div>
+   
+  
+  
+ 
+   <div className="container bg-primary card-my-style mt-2">
+   <div className="row">
+     {orders.map((order, index) => (
+       <div key={order._id} className="col-md-4">
+         <div className="card" style={{ marginBottom: '20px', borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
+           <div className="list-group list-group-flush">
+             <div className="list-group-item">
+               <p>Order No: {index + 1}</p> {/* Adding order number */}
+               <p>Order ID: {order._id}</p>
+               <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
+               <p>Order Status: {order.OrderStatus}</p>
+             </div>
+             <div>
+               {order.shippingAddress && (
+                 <p>
+                   
+                   Name: {order.shippingAddress.name},
+                   Address: {order.shippingAddress.address},
+                   City: {order.shippingAddress.city},
+                   State: {order.shippingAddress.state}
+                   PostalCode: {order.shippingAddress.postalCode}
+                 </p>
+               )}
+               <p>Payment Method: {order.paymentMethod}</p>
+               <div>
+                 <p>Items:</p>
+                 <ul>
+                   {order.cartItems.map((item) => (
+                     <li key={item._id}>
+                       {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+               <p >Total Amount: ${order.totalAmount}</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     ))}
+   </div>
  </div>
+ 
+    
+
+  
+ </div>
+ 
    </div>
   );
 }

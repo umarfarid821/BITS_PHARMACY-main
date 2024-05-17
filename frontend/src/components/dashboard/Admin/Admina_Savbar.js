@@ -82,12 +82,7 @@ const Sidebar = () => {
             <span className="links_name">Delivery Worker</span>
           </button>
         </li>
-        <li className='active'>
-          <button className="active back " onClick={AdminProfile}>
-            <i className="bx bx-user"></i>
-            <span className="links_name">AdminProfile</span>
-          </button>
-        </li>
+     
         <li>
           <button className="active back" onClick={AdminPannel}>
             <i className="bx bx-message"></i>

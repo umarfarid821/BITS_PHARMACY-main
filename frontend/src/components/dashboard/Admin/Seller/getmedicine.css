@@ -1,31 +1,9 @@
-/* AllMedicinesCart.css */
-
-/* Container for the entire cart */
-.cart-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Style for each medicine card */
-  .medicine-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Header style */
-  .cart-header {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  /* Style for individual medicine details */
-  .medicine-details {
-    margin-bottom: 8px;
-  }
-  
-  /* Add more styles as needed */
-  
+.getmedicine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 40px;
+}

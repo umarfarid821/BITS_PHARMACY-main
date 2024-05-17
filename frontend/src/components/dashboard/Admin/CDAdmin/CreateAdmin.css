@@ -1,46 +1,6 @@
-/* CreateAdmin.css */
-
-.create-admin-container {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .create-admin-title {
-    font-size: 24px;
-    margin: 10px 0;
-    color: #333;
-  }
-  
-  .create-admin-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .create-admin-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .create-admin-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .create-admin-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* You can add more styles as needed for your design */
-  
+.create{
+  padding-top: 10px;
+}
+.cd{
+  height: 100vh;
+}

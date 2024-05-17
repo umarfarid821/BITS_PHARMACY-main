@@ -1,14 +1,11 @@
-// AddMedicineToStock.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import './Stock.css';
+import './getmedicine.css';
 import MedicineCard from './MedicineCard'; // Import the MedicineCard component
 
 const AddMedicineToStock = (props) => {
   const { sellerName } = props;
-  console.log('Seller name:', sellerName);
   const { medicineId } = useParams();
   const navigate = useNavigate();
   const [medicines, setMedicines] = useState([]);
@@ -16,21 +13,18 @@ const AddMedicineToStock = (props) => {
   const [prices, setPrices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [nooftablet, setNooftablets]= useState([]);
+  const [nooftablet, setNooftablets] = useState([]);
   const [showNextMedicine, setShowNextMedicine] = useState(false); // State to track visibility of next medicine card
 
   useEffect(() => {
     const fetchMedicineDetails = async () => {
       const token = localStorage.getItem("token");
-      console.log('token',token);
       try {
         const response = await axios.get(`http://localhost:5000/api/seller/${sellerName}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response);
-
         setMedicines(response.data);
         setQuantities(new Array(response.data.length).fill(0));
         setPrices(new Array(response.data.length).fill(0));
@@ -86,47 +80,43 @@ const AddMedicineToStock = (props) => {
   };
 
   return (
-    <div className="add-medicine-card  slide">
-      <div className="card-header">
-        <h2>Add Medicine to the Stock</h2>
-        {medicines.length === 0 ? (
-          <p>No medicine available from the seller.</p>
-        ) : (
-          <ul>
-            {medicines.map((medicine, index) => (
-              <div key={medicine._id}>
-                <MedicineCard
-                  medicine={medicine}
-                  index={index}
-                  handleSubmit={handleSubmit}
-                  quantities={quantities}
-                  setQuantities={setQuantities}
-                  prices={prices}
-                  setPrices={setPrices}
-                  nooftablet={nooftablet}
-                  setNooftablets={setNooftablets}
-                  loading={loading}
-                  error={error}
-                />
-                {showNextMedicine && index === medicines.length - 1 && (
-                  <MedicineCard
-                    medicine={medicine} // Pass the last medicine again for the next card
-                    index={index + 1} // Use the next index for the next card
-                    handleSubmit={handleSubmit}
-                    quantities={quantities}
-                    setQuantities={setQuantities}
-                    prices={prices}
-                    setPrices={setPrices}
-                    nooftablet={nooftablet}
-                    setNooftablets={setNooftablets}
-                    loading={loading}
-                    error={error}
-                  />
-                )}
-              </div>
-            ))}
-          </ul>
-        )}
+    <div className="container mt-4">
+      <h1>Add Medicine to the Stock</h1>
+      <div className="row">
+        {medicines.map((medicine, index) => (
+          <div key={medicine._id} className="col-md-4 mb-6">
+            <h3 className='getmedicine'>Medicine {index + 1}</h3>
+            <MedicineCard
+            
+              medicine={medicine}
+              index={index}
+              handleSubmit={handleSubmit}
+              quantities={quantities}
+              setQuantities={setQuantities}
+              prices={prices}
+              setPrices={setPrices}
+              nooftablet={nooftablet}
+              setNooftablets={setNooftablets}
+              loading={loading}
+              error={error}
+            />
+            {showNextMedicine && index === medicines.length - 1 && (
+              <MedicineCard
+                medicine={medicine} // Pass the last medicine again for the next card
+                index={index + 1} // Use the next index for the next card
+                handleSubmit={handleSubmit}
+                quantities={quantities}
+                setQuantities={setQuantities}
+                prices={prices}
+                setPrices={setPrices}
+                nooftablet={nooftablet}
+                setNooftablets={setNooftablets}
+                loading={loading}
+                error={error}
+              />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

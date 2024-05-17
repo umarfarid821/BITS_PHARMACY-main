@@ -3,6 +3,8 @@
 import React from 'react';
 import './Medicine.css';
 const MedicineCard = ({ medicine, index, handleSubmit, quantities, setQuantities, prices, setPrices, nooftablet, setNooftablets, loading, error }) => {
+  
+    console.log('Medicine:', medicine);
   return (
     <div className='medicine-list'>
     <li  className="medicine-card"   key={medicine._id}>
@@ -12,12 +14,11 @@ const MedicineCard = ({ medicine, index, handleSubmit, quantities, setQuantities
     <p>Expiry Date: {medicine.expiryDate}</p>
     <p>Manufacturing Date: {medicine.manufacturingDate}</p>
     <p>Made In: {medicine.madeIn}</p>
-    <p>Price: {medicine.adminmedicineprice}</p>
-    <p>Quantity: {medicine.adminmedicinequantity}</p>
-    <p>No of Tablets: {medicine.adminnooftablets}</p>
+    <p>Price: {medicine.price}</p>
+    <p> Specification: {medicine.specification}</p>
     <p>Seller Name: {medicine.sellername}</p>
-    <p>Medicine ID: {medicine.medicineId}</p>
-    <p>Medicine Description: {medicine.medicinedescription}</p>
+    
+  
     
 
       <div className='card-body'>
