@@ -9,10 +9,15 @@ const Card = () => {
   const [totalOrdersToday, setTotalOrdersToday] = useState(0);
   const [totalOrdersYesterday, setTotalOrdersYesterday] = useState(0);
   const [totalSales, setTotalSales] = useState(0); // State to hold total sales
+  const [workers, setWorkers] = useState([]);
+  const [workersNames, setWorkersNames] = useState('');
+  const [name, setName] = useState([]);
 
 
   useEffect(() => {
+    
     fetchOrders();
+    
   }, []);
 
   const token = localStorage.getItem('token');
@@ -27,10 +32,27 @@ const Card = () => {
       const ordersData = response.data;
       setOrders(ordersData);
       calculateTotals(ordersData);
+      console.log('testing testing');
+  
+      // Loop through each order to fetch delivery worker data
+      for (const order of ordersData) {
+        const orderId = order._id;
+  
+        const getDeliveryWorkers = await axios.get(`http://localhost:5000/api/deliveryWorker/getbyorderid/${orderId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+  
+        // Extract username from delivery worker data and set it in state
+        const username = getDeliveryWorkers.data.username;
+        setName(username);
+      }
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   const calculateTotals = (ordersData) => {
     // Calculate total orders
@@ -78,6 +100,55 @@ console.log(totalOrders,todayOrders,totalOrdersYesterday);
   }
 
 };
+const handlefetchWorkers = async (orderId) => {
+  try {
+    const response = await axios.get('http://localhost:5000/api/deliveryWorker/getdeliveryworkers', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response.data);
+    const workersData = response.data;
+    setWorkers(workersData);
+    if (Array.isArray(workersData)) {
+      const usernames = workersData.map(worker => worker.username);
+      setWorkersNames(usernames); // Update state with the workers' names
+    } else {
+      console.error('Unexpected response format:', workersData);
+      setWorkersNames([]);
+    }
+    
+  } catch (error) {
+    console.error('Error fetching workers:', error);
+  }
+ 
+};
+
+
+
+
+const handleAssignOrder = async (orderId,username) => {
+
+   console.log('Assigning order to worker:', orderId, username);
+
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+    const response = await axios.put(`http://localhost:5000/api/deliveryWorker/put/${orderId}/${username}`, {}, config);
+    console.log(response.data);
+
+
+    
+ 
+ 
+   
+    
+  }
+
+
   return (
    <div className="card-container bg-secondary">
    <NavBar/>
@@ -104,6 +175,8 @@ console.log(totalOrders,todayOrders,totalOrdersYesterday);
                <p>Order ID: {order._id}</p>
                <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
                <p>Order Status: {order.OrderStatus}</p>
+               
+               
              </div>
              <div>
                {order.shippingAddress && (
@@ -129,6 +202,27 @@ console.log(totalOrders,todayOrders,totalOrdersYesterday);
                </div>
                <p >Total Amount: ${order.totalAmount}</p>
              </div>
+             <p>Assigned Order To </p>  {/* Add a button to assign order to a worker */}
+              <div className="text-center">
+                <button className="btn btn-primary"   onClick={ ()=>handlefetchWorkers(order._id)} >Assign Order</button>
+                <div>
+                {workersNames.length > 0 && (
+                  <>
+                    <h3>Workers Names</h3>
+                    <ul>
+                      {workersNames.map((username, index) => (
+                        <li key={index} onClick={ ()=>handleAssignOrder(order._id, username)} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
+                          {username}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+
+
+                </div>
+
            </div>
          </div>
        </div>

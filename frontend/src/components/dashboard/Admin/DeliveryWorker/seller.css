@@ -8,6 +8,13 @@
     margin: 0 auto;
     text-align: center;
   }
+.de-wk{
+  
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 100vh; /* Set the height to occupy the full viewport height */
+  
+  
+}
   
   .create-admin-title {
     font-size: 24px;

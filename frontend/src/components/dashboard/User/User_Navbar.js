@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './UserNavbar.css';
+import { Button } from 'react-bootstrap';
 const UserProfile = () => {
   // Define the function to handle the "Profile" button click
   window.location.href = '/admin/profile';
@@ -38,18 +39,20 @@ const AboutPage=()=>{
 class Navbar extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark ">
         <a className="navbar-brand" href="#">Bits Pharmacy</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto bg-primary ">
             <li className="nav-item active">
-              <a className="nav-link "  onClick={Home} >Home <span className="sr-only">(current)</span></a>
+              
+           <Button variant="primary" onClick={Home}>Home</Button>
+
             </li>
-            <li className="nav-item  bg-primary">
+            <li className="nav-item active ">
               <a className="nav-link  "   onClick={UserStockMedicine}>Shop </a>
             </li>
             <li className="nav-item">
@@ -59,7 +62,7 @@ class Navbar extends React.Component {
             <a className="nav-link" onClick={AboutPage}>About</a>
           </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">Disabled</a>
+              <a className="nav-link " onClick={UserFeedback}>Contact </a>
             </li>
             <li className="nav-item">
             <a className="nav-link"  onClick={handleLogout} >Logout</a>

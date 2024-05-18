@@ -145,6 +145,7 @@ header{
 }
 .input{
     background-color: transparent;
+    width: 100%;
 }
 .input-field:hover, .input-field:focus{
     background: rgba(255, 255, 255, 0.25);
@@ -157,6 +158,7 @@ header{
     top: -35px;
     left: 17px;
     color: #fff;
+    
    
    
 }

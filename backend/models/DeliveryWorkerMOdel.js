@@ -28,6 +28,10 @@ const sellerSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  assignedMedicine: {
+    type: mongoose.Schema.Types.Mixed,
+    default: null,
+  },
   password: {
     type: String,
     required: true,

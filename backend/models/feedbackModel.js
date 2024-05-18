@@ -10,7 +10,10 @@ const feedbackSchema = new mongoose.Schema({
     required: true,
     unique: true, // Assuming each user can provide feedback only once
   },
-  feedback: {
+  subject: {
+    type: String,
+  },
+  message: {
     type: String,
     required: true,
   },

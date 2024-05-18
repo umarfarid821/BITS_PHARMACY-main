@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import './style.css';
+import './loginstyle.css';
 import { useNavigate } from 'react-router-dom';
 const RegistrationForm = ({ setToken }) => {
     const navigate = useNavigate();
@@ -48,7 +48,7 @@ const RegistrationForm = ({ setToken }) => {
         }
     }
   return (
-    <div className="wrapper">
+    <div className="wrapper1">
       <nav className="nav">
         <div className="nav-logo">
           <p>LOGO .</p>

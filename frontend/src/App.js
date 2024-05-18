@@ -20,6 +20,7 @@ import AdminSeller from "./components/dashboard/Admin/Seller/adminSeller";
 import AddMedicineToStock from "./components/dashboard/Admin/Seller/addmedicinestock";
 import ShowStockMedicine from "./components/dashboard/Admin/Stock/stock";
 import UserStockMedicine from "./components/dashboard/User/Medicines/UserMedicines";
+import NewWorker from "./components/dashboard/Admin/DeliveryWorker/NewWorker";
 import { useState } from "react";
 import CartDisplay from "./components/dashboard/User/Medicines/CartDisplay";
 import Shipping from "./components/dashboard/User/OrderShipping/Shipping";
@@ -61,6 +62,7 @@ const App = ()=>{
         <Route path="/admin/addmedicine/:medicineId/:medicineName" element={<AddMedicineToStock/>}/>
         <Route path="/admin/showstockmedicine" element={<ShowStockMedicine/>}/>
         <Route path="/admin/order" element={<OrderList/>}/>
+        <Route path="/admin/newworker" element={<NewWorker/>}/>
 
  <Route path="/admin/onlyprofile" element={<OnlyProfile/>}/>
         <Route path="/admin/deliveryworker" element={<DeliveryWorker/>}/>

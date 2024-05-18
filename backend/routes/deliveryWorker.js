@@ -13,12 +13,14 @@ router.get('/getdeliveryworkers', authenticateToken, deliveryWorkerController.ge
 // Get a specific delivery worker by ID
 router.get('/adeliveryworkers/:id', deliveryWorkerController.getDeliveryWorkerById);
 
+router.put('/put/:orderId/:username', authenticateToken, deliveryWorkerController.assignOrderToWorker);
 // Update a delivery worker by ID (if needed)
 // router.put('/deliveryworkers/:id', deliveryWorkerController.updateDeliveryWorkerById);
 
 // Delete a delivery worker by ID
 router.delete('/deletedeliveryworkers/:id', authenticateToken, deliveryWorkerController.deleteDeliveryWorker);
-
+router.get('/getbyorderid/:orderId', authenticateToken, deliveryWorkerController.getDeliveryWorkerByOrderId);
+router.put('/updatestatus/:orderId',  deliveryWorkerController.updateOrderStatus);
 // Get medicine by delivery worker's name
 
 module.exports = router;

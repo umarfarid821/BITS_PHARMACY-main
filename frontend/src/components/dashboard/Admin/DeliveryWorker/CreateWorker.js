@@ -38,6 +38,8 @@ const CreateDeliveryWorker= ({ }) => {
                 },
             });
             console.log(response.data)
+            alert("Worker Created Successfully");
+            handleRefresh();
 
             // Clear all fields after successful registration
             setRegistrationData({
@@ -60,79 +62,7 @@ const CreateDeliveryWorker= ({ }) => {
     return (
         <div>
             <Navbar />
-        <div className="create-admin-container">
-            <h1 className="create-admin-title">Create a New  Worker</h1>
-            <form className="create-admin-form" onSubmit={handleRegistrationSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={registrationData.email}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="text"
-                    name="gender"
-                    placeholder="Gender"
-                    value={registrationData.gender}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={registrationData.username}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="text"
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    value={registrationData['phoneNumber']}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={registrationData.password}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="text"
-                    name="address"
-                    placeholder="Address"
-                    value={registrationData.address}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-                <input
-                    type="text"
-                    name="city"
-                    placeholder="City"
-                    value={registrationData.city}
-                    onChange={handleRegistrationPage}
-                    required
-                />  
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={registrationData.name}
-                    onChange={handleRegistrationPage}
-                    required
-                />
-
-                <button className="create-admin-button" type="submit" onClick={() => handleRefresh()}>CreateDeliveryWorker</button>
-            </form>
-
-           
-        </div>
+        
         <div>
             <WorkerList />
 

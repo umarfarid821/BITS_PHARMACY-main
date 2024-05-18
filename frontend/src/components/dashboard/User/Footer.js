@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 const Footer = () => {
   return (
-    <footer className="site-footer bg-success">
+    <footer className="site-footer bg-primary">
       <div className="container  height">
         <div className="row">
           <div className="col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -14,17 +14,17 @@ const Footer = () => {
           <div className="col-lg-3 mx-auto mb-5 mb-lg-0">
             <h3 className="footer-heading mb-4">Quick Links</h3>
             <ul className="list-unstyled">
-              <li><a href="#">Supplements</a></li>
-              <li><a href="#">Vitamins</a></li>
-              <li><a href="#">Diet &amp; Nutrition</a></li>
-              <li><a href="#">Tea &amp; Coffee</a></li>
+              <li className='ql's><a href="#">Supplements</a></li>
+              <li className='ql'><a href="#">Vitamins</a></li>
+              <li className='ql'><a href="#">Diet &amp; Nutrition</a></li>
+              <li className='ql'><a href="#">Tea &amp; Coffee</a></li>
             </ul>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div className="col-md-6 col-lg-3 ">
             <div className="block-5 mb-5">
             
               <h3 className="footer-heading mb-4">Contact Info</h3>
-              <ul className="list-unstyled">
+              <ul className="list-unstyled ">
               
                 <li className="address">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">

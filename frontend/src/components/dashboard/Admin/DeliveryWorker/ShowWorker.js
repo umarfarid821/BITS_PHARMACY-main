@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './showseller.css';
+import Table from 'react-bootstrap/Table';
 import {useNavigate} from 'react-router-dom';
+import { Button } from "react-bootstrap";
 const WorkerList = () => {
     const navigate = useNavigate();
   const [admins, setAdmins] = useState([]);
+  const [selectedStatus, setSelectedStatus] = useState('');
   
   useEffect(() => {
     // Fetch the list of admins from your backend API with the token
@@ -21,6 +24,7 @@ const WorkerList = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log(response.data);
         console.log(response.data);
         setAdmins(response.data); // Assuming the API returns an array of admin objects
       } catch (error) {
@@ -54,42 +58,84 @@ const WorkerList = () => {
     }
   };
 
+
+  const ChangeMedicineStatus = async (orderId) => {
+    const token = localStorage.getItem("token");
+    console.log(token);
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
+    try {
+      const response = await axios.put(`http://localhost:5000/api/deliveryWorker/updatestatus/${orderId}`,{ status: selectedStatus }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching sellers:", error);
+    }
+  };
+const NewWorker = async () => {
+
+  navigate('/admin/newworker');
+};
+
   const handleShow = async (adminId) => {
     
    
     navigate(`/admin/showadminseller/${adminId}`);
   };
   return (
-    <div className="pad">
-      <h1>Sellers List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-            <th>Gender</th>
-            <th>Actions</th>
+    <div className="pad bg-secondary">
+    <h1>Sellers List</h1>
+    <Button className=" btn-secondary btn-style" onClick={NewWorker}  > Create New Seller </Button>
+    <Table striped bordered hover variant="dark">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>Assigned Medicines</th>
+          <th>Actions Admin</th>
+        </tr>
+      </thead>
+      <tbody>
+        {admins.map((admin, index) => (
+          <tr key={admin._id}>
+            <td>{admin.username}</td>
+            <td>{admin.email}</td>
+            <td>{admin.phoneNumber}</td>
+            <td>{admin.address}</td>
+            <td>{admin.gender}</td>
+            <td>{admin.assignedMedicine}</td>
+            <td>
+              <div>
+                <select
+                  value={selectedStatus}
+                  onChange={(e) => setSelectedStatus(e.target.value)}
+                >
+                  <option value="">Select status</option>
+                  <option value="Order Delivered">Order Delivered</option>
+                  <option value="Order Returned">Order Returned</option>
+                </select>
+                <button
+                  onClick={() => ChangeMedicineStatus(admin.assignedMedicine)}
+                >
+                  Change Order Status
+                </button>
+              </div>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {admins.map((admin) => (
-            <tr key={admin._id}>
-              <td>{admin.username}</td>
-              <td>{admin.email}</td>
-              <td>{admin.phoneNumber}</td>
-              <td>{admin.address}</td>
-              <td>{admin.gender}</td>
-              <td>
-                
-               
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </Table>
+  </div>
   );
 };
 
