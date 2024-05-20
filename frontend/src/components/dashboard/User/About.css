@@ -1,14 +1,18 @@
-.my{
+.my-about{
 
-    background-image: url('./images/hero_1.jpg'); /* Add background image */
+    background-image: url('./images/3.jpg'); /* Add background image */
     background-size: cover; /* Add background size */
-    background-position: center; /* Add background position */
+    background-position: contain; /* Add background position */
     padding: 7em 0; /* Add padding */
     color: #fff; /* Add color */
     text-align: center; /* Add text align */
     position: relative; /* Add position */
     height: 60vh; /* Add height */
 
+}
+.img-display{
+  
+  padding-bottom: 50px;
 }
 
 .fix{

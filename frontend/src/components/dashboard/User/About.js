@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from './User_Navbar';
 import './About.css';
-import Img3 from './images/3.jpg';
-import Img2 from './images/2.jpg';
+import w from './images/w.jpg';
+import mc from './images/mc.jpg';
 import U from './images/U.jpg';
 import J from './images/J.jpg';
 import R from './images/R.jpg';
@@ -14,7 +14,7 @@ const About = () => {
     return (
         <div className='overflow-scroll bg-light'>
         <Navbar />
-        <div className="site-blocks-cover my " >
+        <div className="site-blocks-cover my-about " >
         <div className="container">
           <div className="row">
             <div className="col-lg-7 mx-auto order-lg-2 align-self-center">
@@ -37,7 +37,7 @@ const About = () => {
           <div className="col-md-6">
             <div className="block-16">
               <figure>
-                <img src={Img3} alt="Image placeholder" className="img-fluid rounded" />
+                <img src={w} alt="Image placeholder" className="img-fluid rounded" />
                       </figure>
             </div>
           </div>
@@ -58,9 +58,9 @@ const About = () => {
     <div className="container">
       <div className="row mb-5">
         <div className="col-md-6 order-md-2">
-          <div className="block-16">
+          <div className="block-16 img-display">
             <figure>
-              <img src={Img2} alt="Image placeholder" className="img-fluid rounded" />
+              <img src={mc} alt="Image placeholder" className="img-fluid rounded" />
                  </figure>
           </div>
         </div>

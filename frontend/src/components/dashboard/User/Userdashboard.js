@@ -11,9 +11,9 @@ const LandingPage = () => {
     window.location.href = '/user/stockmedicines';
   };
   return (
-    <div className='scroll'>
+    <div className='scroll  bg-primary'>
       <Navbar />
-      <div className="site-blocks-cover my " >
+      <div className="site-blocks-cover my-dashboard " >
         <div className="container">
           <div className="row">
             <div className="col-lg-7 mx-auto order-lg-2 align-self-center">

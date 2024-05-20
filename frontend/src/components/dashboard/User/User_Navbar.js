@@ -1,82 +1,123 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Navbar, Container, Nav, Button,Form } from 'react-bootstrap';
 import './UserNavbar.css';
-import { Button } from 'react-bootstrap';
-const UserProfile = () => {
-  // Define the function to handle the "Profile" button click
-  window.location.href = '/admin/profile';
-};
 
-const UserStockMedicine = () => {
-  // Define the function to handle the "Profile" button click
-  window.location.href = '/user/stockmedicines';
-};
+const NavbarComponent = () => {
+  const [isActive, setIsActive] = useState(false);
 
-const handleCartDisplay = () => {
-  // Define the function to handle the "Profile" button click
-  window.location.href = '/user/cart';
-};
+  const handleMouseDown = () => {
+    setIsActive(true);
+  };
 
-const UserFeedback = () => {
-  // Define the function to handle the "Profile" button click
-  window.location.href = '/user/feedback';
-};
-const Home=()=>{
-  window.location.href = '/user_dashboard';
-   
-};
-const handleLogout = () => {
-  // Handle logout logic here, such as clearing authentication token and redirecting to landing page
-  localStorage.removeItem('UserToken');
-  window.location.href = '/'; // Replace with the actual route for your landing page
-};
-const AboutPage=()=>{
-  window.location.href = '/user/about';
-}
+  const handleMouseUp = () => {
+    setIsActive(false);
+  };
 
-
-
-//mnn
-class Navbar extends React.Component {
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-dark ">
-        <a className="navbar-brand" href="#">Bits Pharmacy</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto bg-primary ">
-            <li className="nav-item active">
-              
-           <Button variant="primary" onClick={Home}>Home</Button>
-
-            </li>
-            <li className="nav-item active ">
-              <a className="nav-link  "   onClick={UserStockMedicine}>Shop </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" onClick={handleCartDisplay} >Cart Display</a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link" onClick={AboutPage}>About</a>
-          </li>
-            <li className="nav-item">
-              <a className="nav-link " onClick={UserFeedback}>Contact </a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link"  onClick={handleLogout} >Logout</a>
-          </li>
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-         
-        </div>
-      </nav>
-    );
+  const handleMouseLeave = () => {
+    setIsActive(false);
+  };
+  const UserProfile = () => {
+    // Define the function to handle the "Profile" button click
+    window.location.href = '/admin/profile';
+  };
+  
+  const UserStockMedicine = () => {
+    // Define the function to handle the "Profile" button click
+    window.location.href = '/user/stockmedicines';
+  };
+  
+  const handleCartDisplay = () => {
+    // Define the function to handle the "Profile" button click
+    window.location.href = '/user/cart';
+  };
+  
+  const UserFeedback = () => {
+    // Define the function to handle the "Profile" button click
+    window.location.href = '/user/feedback';
+  };
+  const Home=()=>{
+    window.location.href = '/user_dashboard';
+     
+  };
+  const handleLogout = () => {
+    // Handle logout logic here, such as clearing authentication token and redirecting to landing page
+    localStorage.removeItem('UserToken');
+    window.location.href = '/'; // Replace with the actual route for your landing page
+  };
+  const AboutPage=()=>{
+    window.location.href = '/user/about';
   }
-}
 
-export default Navbar;
+  return (
+    <Navbar bg="primary" data-bs-theme="dark">
+    <Button variant="primary" 
+         className={`nav-item ${isActive ? 'my-active' : ''}`}
+         onMouseDown={handleMouseDown}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseLeave} onClick={Home}>Bits Pharmacy</Button>
+    
+      <Container>
+       
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto bg-primary ">
+         
+            
+         <Button variant="primary" 
+         className={`nav-item ${isActive ? 'my-active' : ''}`}
+         onMouseDown={handleMouseDown}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseLeave} onClick={Home}>Home</Button>
+
+          <Button variant="primary"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={UserStockMedicine}>Shop</Button>
+
+          <Button variant="primary"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={handleCartDisplay}>Cart</Button>
+          <Button variant="primary"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={UserFeedback}>Contact</Button>
+         
+          <Button variant="primary"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={AboutPage}>About</Button>
+          <Button variant="primary"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={handleLogout}>Logout</Button>
+
+
+         
+
+         
+        
+        </ul>
+        
+        
+       
+      </div>
+      <Form className="d-flex my-form">
+      <Form.Control
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+      />
+
+    </Form>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default NavbarComponent;
