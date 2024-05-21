@@ -94,7 +94,7 @@ const DashboardScreen = () => {
               <div className="number">{totalData.totalOrders}</div>
               <div className="indicator">
                 <i className="bx bx-up-arrow-alt"></i>
-                <span className="text">Up from yesterday</span>
+                <span className="text">All Orders</span>
               </div>
             </div>
             <i className="bx bx-cart-alt cart"></i>
@@ -105,7 +105,7 @@ const DashboardScreen = () => {
               <div className="number">{totalData.todayOrders}</div>
               <div className="indicator">
                 <i className="bx bx-up-arrow-alt"></i>
-                <span className="text">Up from yesterday</span>
+                <span className="text">Today Orders</span>
               </div>
             </div>
             <i className="bx bxs-cart-add cart two"></i>
@@ -127,7 +127,7 @@ const DashboardScreen = () => {
               <div className="number">{totalData.totalSales}Rs</div>
               <div className="indicator">
                 <i className="bx bx-down-arrow-alt down"></i>
-                <span className="text">Down From Today</span>
+                <span className="text">All Sales Income</span>
               </div>
             </div>
             <i className="bx bxs-cart-download cart four"></i>

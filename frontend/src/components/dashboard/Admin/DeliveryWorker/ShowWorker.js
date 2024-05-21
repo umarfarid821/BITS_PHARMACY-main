@@ -44,7 +44,7 @@ const WorkerList = () => {
 
     try {
       // Make a DELETE request to your API to delete the admin by ID
-      await axios.delete(`http://localhost:5000/api/deliveryWorker/deletesellers/${adminId}`, {
+      await axios.delete(`http://localhost:5000/api/deliveryWorker/deletedeliveryworkers/${adminId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,16 +84,12 @@ const NewWorker = async () => {
   navigate('/admin/newworker');
 };
 
-  const handleShow = async (adminId) => {
-    
-   
-    navigate(`/admin/showadminseller/${adminId}`);
-  };
+  
   return (
     <div className="pad bg-secondary">
-    <h1>Sellers List</h1>
-    <Button className=" btn-secondary btn-style" onClick={NewWorker}  > Create New Seller </Button>
-    <Table striped bordered hover variant="dark">
+    <h1>Workers List To Admin</h1>
+    <Button className=" btn-secondary btn-style" onClick={NewWorker}  > Create New Worker</Button>
+    <Table bordere strd hover variant="dark">
       <thead>
         <tr>
           <th>Username</th>
@@ -102,11 +98,13 @@ const NewWorker = async () => {
           <th>Address</th>
           <th>Gender</th>
           <th>Assigned Medicines</th>
+          <th>Delete Worker</th>
           <th>Actions Admin</th>
         </tr>
       </thead>
       <tbody>
-        {admins.map((admin, index) => (
+      {admins.length > 0 ? (
+        admins.map((admin, index) => (
           <tr key={admin._id}>
             <td>{admin.username}</td>
             <td>{admin.email}</td>
@@ -114,6 +112,9 @@ const NewWorker = async () => {
             <td>{admin.address}</td>
             <td>{admin.gender}</td>
             <td>{admin.assignedMedicine}</td>
+            <td>
+              <Button onClick={() => handleDelete(admin._id)}>Delete Worker</Button>
+            </td>
             <td>
               <div>
                 <select
@@ -132,8 +133,13 @@ const NewWorker = async () => {
               </div>
             </td>
           </tr>
-        ))}
-      </tbody>
+        ))
+      ) : (
+        <tr>
+          <td colSpan="8" className="text-center">No workers available</td>
+        </tr>
+      )}
+    </tbody>
     </Table>
   </div>
   );

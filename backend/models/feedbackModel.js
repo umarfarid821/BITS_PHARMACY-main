@@ -8,7 +8,7 @@ const feedbackSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // Assuming each user can provide feedback only once
+   
   },
   subject: {
     type: String,

@@ -140,6 +140,10 @@ const handleAssignOrder = async (orderId,username) => {
     const response = await axios.put(`http://localhost:5000/api/deliveryWorker/put/${orderId}/${username}`, {}, config);
     console.log(response.data);
 
+    if (response.data) {
+      alert('Order assigned successfully');
+    }
+    
 
     
  
@@ -166,69 +170,77 @@ const handleAssignOrder = async (orderId,username) => {
  
    <div className="container bg-primary card-my-style mt-2">
    <div className="row">
-     {orders.map((order, index) => (
-       <div key={order._id} className="col-md-4">
-         <div className="card" style={{ marginBottom: '20px', borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
-           <div className="list-group list-group-flush">
-             <div className="list-group-item">
-               <p>Order No: {index + 1}</p> {/* Adding order number */}
-               <p>Order ID: {order._id}</p>
-               <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
-               <p>Order Status: {order.OrderStatus}</p>
-               
-               
-             </div>
-             <div>
-               {order.shippingAddress && (
-                 <p>
-                   
-                   Name: {order.shippingAddress.name},
-                   Address: {order.shippingAddress.address},
-                   City: {order.shippingAddress.city},
-                   State: {order.shippingAddress.state}
-                   PostalCode: {order.shippingAddress.postalCode}
-                 </p>
-               )}
-               <p>Payment Method: {order.paymentMethod}</p>
-               <div>
-                 <p>Items:</p>
-                 <ul>
-                   {order.cartItems.map((item) => (
-                     <li key={item._id}>
-                       {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
-                     </li>
-                   ))}
-                 </ul>
-               </div>
-               <p >Total Amount: ${order.totalAmount}</p>
-             </div>
-             <p>Assigned Order To </p>  {/* Add a button to assign order to a worker */}
-              <div className="text-center">
-                <button className="btn btn-primary"   onClick={ ()=>handlefetchWorkers(order._id)} >Assign Order</button>
-                <div>
-                {workersNames.length > 0 && (
-                  <>
-                    <h3>Workers Names</h3>
-                    <ul>
-                      {workersNames.map((username, index) => (
-                        <li key={index} onClick={ ()=>handleAssignOrder(order._id, username)} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
-                          {username}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </div>
-
-
-                </div>
-
+     {orders.length === 0 ? (
+       <div className="col-12">
+         <div className="card text-center">
+           <div className="card-body">
+             <h5 className="card-title">No Orders</h5>
+             <p className="card-text">There are no orders to display at this time.</p>
            </div>
          </div>
        </div>
-     ))}
+     ) : (
+       orders.map((order, index) => (
+         <div key={order._id} className="col-md-4">
+           <div className="card mb-3" style={{ borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
+             <div className="list-group list-group-flush">
+               <div className="list-group-item">
+                 <p>Order No: {index + 1}</p> {/* Adding order number */}
+                 <p>Order ID: {order._id}</p>
+                 <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
+                 <p>Order Status: {order.OrderStatus}</p>
+               </div>
+               <div>
+                 {order.shippingAddress && (
+                   <p>
+                     Name: {order.shippingAddress.name},
+                     Address: {order.shippingAddress.address},
+                     City: {order.shippingAddress.city},
+                     State: {order.shippingAddress.state}
+                     PostalCode: {order.shippingAddress.postalCode}
+                   </p>
+                 )}
+                 <p>Payment Method: {order.paymentMethod}</p>
+                 <div>
+                   <p>Items:</p>
+                   <ul>
+                     {order.cartItems.map((item) => (
+                       <li key={item._id}>
+                         {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
+                       </li>
+                     ))}
+                   </ul>
+                 </div>
+                 <p>Total Amount: ${order.totalAmount}</p>
+               </div>
+               <p>Assigned Order To</p>  {/* Add a button to assign order to a worker */}
+               <div className="text-center">
+                 <button className="btn btn-primary" onClick={() => handlefetchWorkers(order._id)}>Assign Order</button>
+                 <div>
+                 {workersNames.length > 0 ? (
+                   <>
+                     <h3>Workers Names</h3>
+                     <ul>
+                       {workersNames.map((username, index) => (
+                         <li className='workername' key={index} onClick={() => handleAssignOrder(order._id, username)} style={{ cursor: 'pointer' }}>
+                           {username}
+                         </li>
+                       ))}
+                     </ul>
+                   </>
+                 ) : (
+                   <p>No workers available</p>
+                 )}
+               </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       ))
+     )}
    </div>
  </div>
+ 
  
     
 

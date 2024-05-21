@@ -5,13 +5,16 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Img from './images/p-6.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserMedicine.css';
-import Button from 'react-bootstrap/Button';
+import Footer from '../Footer';
+
 const UserStockMedicine = () => {
   const [medicines, setMedicines] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const [dimensions, setDimensions] = useState({ width: '17rem', height: '40rem' });
+  
   const [ProductPrice, setPrice] = useState(null);
   const [Noofproducts, setNoofproducts] = useState(null);
   const [Productname, setProductname] = useState(null);
@@ -57,30 +60,35 @@ const UserStockMedicine = () => {
   }, []);
 
   return (
-    <div>
+    <div   className='overflow-scroll-USerMedicine '>
       <Navbar />
-      <div style={{ height: '800px', overflowY: 'auto' }}  >
-        <Row xs={1} md={2} className="g-4  ">
+      <div >
+        <Row xs={1} md={4} className="g-3  ">
           {medicines.map((medicine, idx) => (
             <Col key={idx}>
-              <Card class="card text-white  mb-3"  >
-                <Card.Img variant="top" src={Img} />
-                <Card.Body className='bg-primary'> 
-                <Card.Title class="card-header" > Name : {medicine.medicineName}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Price: {medicine.adminmedicineprice}</Card.Subtitle>
-                <Card.Text>Availbale Tablets : {medicine.adminmedicinequantity}</Card.Text>
-                <Card.Text>Medicine Category: {medicine.medicinecategory}</Card.Text>
-                <Card.Text>Medicine Expiry Date: {medicine.expiryDate}</Card.Text>
+            <div className="d-flex my-card   ">
+            <div className="card bg-primary " style={{ width: dimensions.width, height: dimensions.height }}>
+              <img src={Img} className="card-img-top" alt="..." />
+              <div className="card-body bg-black">
+                <h5 className="card-title ">Name : {medicine.medicineName}</h5>
+                <p className="card-text ">Description Of Medicine</p>
+                <p className="card-text ">Available Quantity : {medicine.adminmedicinequantity}</p>
+                <p  className="card-text "  >Price : {medicine.adminmedicineprice}</p>
+                <p className=' card-text '>Expiry Date : {medicine.expiryDate}</p>
                
-
+                <div className='pt-3 pt-md-5'>
                 <button onClick={() => addToCartHandler(medicine)}>Add to Cart</button>
-              </Card.Body>
-              </Card>
+                
+                </div>
+            </div>
+            </div>
+          </div>
 
             </Col>
           ))}
         </Row>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,4 @@
-/* CartDisplay.css */
-/* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -113,10 +112,13 @@
     background-color: #ff3b20;
   }
   
-  /* Media Queries */
+  
   @media (max-width: 768px) {
     .cart-container {
       padding: 10px;
     }
   }
   
+.hightofcart{
+  padding-bottom: 100px;
+}

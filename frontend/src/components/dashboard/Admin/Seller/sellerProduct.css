@@ -1,42 +1,8 @@
-/* sellerProduct.css */
-
-/* Style for the SellerProductsForm */
-.SellerProductsForm {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style for form labels and inputs */
-  .SellerProductsForm label {
-    
-     /* Display labels in the same line */
-     ;
-    width: 45%; /* Adjust as needed to show two labels in each line */
-    margin-bottom: 4px;
-  }
-  
-  .SellerProductsForm input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 12px;
-  }
-  
-  /* Style for the "Add Product" button */
-  .SellerProductsForm button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .SellerProductsForm button:hover {
-    background-color: #45a049;
-  }
-  
+.SellerProductsForm{
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-color: #05078A;
+  margin-right: 70px;
+  margin-bottom: 20px;
+}

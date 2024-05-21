@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './list.css';
-
+import Table from 'react-bootstrap/Table';
 const AdminList = () => {
   const [admins, setAdmins] = useState([]);
   
@@ -58,7 +58,7 @@ const AdminList = () => {
      <div className="pad1">
      
      
-     <table >
+     <Table bordere strd hover variant="danger" >
      <thead>
        <tr>
          <th>Username</th>
@@ -70,7 +70,8 @@ const AdminList = () => {
        </tr>
      </thead>
      <tbody>
-       {admins.map((admin) => (
+     {admins.length > 0 ? (
+       admins.map((admin) => (
          <tr key={admin._id}>
            <td>{admin.username}</td>
            <td>{admin.email}</td>
@@ -81,9 +82,20 @@ const AdminList = () => {
              <button onClick={() => handleDelete(admin._id)}>Delete</button>
            </td>
          </tr>
-       ))}
+       ))
+      
+      ) : (
+        <tr>
+          <td colSpan="8" className="text-center">No Admin Here</td>
+        </tr>
+      )
+      
+      }
+
+
+
      </tbody>
-   </table></div>
+   </Table></div>
     </div>
   );
 };

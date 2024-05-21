@@ -1,4 +1,4 @@
-/* Stock.css */
+
 
 .add-medicine-card {
   max-width: 1500px;
@@ -75,9 +75,7 @@ button:disabled {
 
 
 
-/* Stock.css */
 
-/* ... (previous styles) */
 
 ul {
   list-style: none;
@@ -99,4 +97,3 @@ li {
   border-radius: 8px;
 }
 
-/* ... (remaining styles) */

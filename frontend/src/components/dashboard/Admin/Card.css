@@ -1,4 +1,4 @@
-/* center card and basic styling for body */
+
 body {
     margin: 0;
     font-family: tahoma;
@@ -9,7 +9,7 @@ body {
     align-items: center;
   }
   
-  /* styling for card  */
+  
   .card {
     padding: 30px 0 55px;
     margin-bottom: 30px;
@@ -21,10 +21,7 @@ body {
     width: 20rem;
   }
   
-  /* porfile image section  */
-  /* css for profile image and  fluid effect  */
-  
-  /* 1.2 styling for fluid and circle effect on profile */
+ 
   .card .profile {
     display: inline-block;
     height: 130px;
@@ -34,7 +31,7 @@ body {
     border-radius: 20%;
   }
   
-  /* profile fluid effect  */
+ 
   .card .profile::before {
     content: "";
     width: 100%;
@@ -50,12 +47,11 @@ body {
     transition: all 0.3s linear 0s;
   }
   
-  /* show fluid effect on card hover  */
   .card:hover .profile::before {
     height: 100%;
   }
   
-  /* circle border effect on profile  */
+ 
   .card .profile::after {
     content: "";
     width: 100%;
@@ -68,7 +64,7 @@ body {
     z-index: -1;
   }
   
-  /* 1.1 styling form card profile imag */
+  
   .card .profile img {
     width: 100%;
     height: auto;
@@ -77,20 +73,18 @@ body {
     transition: all 0.9s ease 0s;
   }
   
-  /* transform img on card hover  */
+ 
   .card:hover .profile img {
     box-shadow: 0 0 0 14px #f7f5ec;
     transform: scale(0.7);
   }
   
-  /* porfile image section  */
-  /* marin content section  */
-  /* 2.1 */
+ 
   .card .main-content {
     margin-bottom: -19px;
   }
   
-  /* 2.2 styling title */
+ 
   .card .main-content .title {
     display: block;
     font-size: 15px;
@@ -98,40 +92,37 @@ body {
     text-transform: capitalize;
     margin: 5px 37px 0;
   }
-  
-  /* 2.3 styling name */
+ 
   .card .main-content .name {
     padding: 0;
     margin: 8px;
     text-transform: uppercase;
   }
   
-  /* marin content section  */
-  /* social media section  */
-  /* 3.1 css for social */
+  
   .card .social {
     width: 100%;
     padding: 0;
     margin: 0;
     background-color: #1f1f1b;
     position: absolute;
-    /* 3.5 */
+    
     bottom: -100px;
     left: 0;
     transition: all 0.5s ease 0s;
   }
   
-  /* 3.5 */
+  
   .card:hover .social {
     bottom: 0;
   }
   
-  /* 3.2 make all social icons in a row */
+
   .card .social li {
     display: inline-block;
   }
   
-  /* 3.3 css for social media anchors */
+
   .card .social li a {
     display: block;
     padding: 10px;
@@ -141,28 +132,27 @@ body {
     text-decoration: none;
   }
   
-  /* 3.4 change color , bgcolor on hover */
+
   .card .social li a:hover {
     color: #3e3b44;
     background-color: #f7f5ec;
     transition: 0.5s;
   }
   
-  /* skill section  */
-  /* 4.1 left all text , padding */
+ 
   .skills {
     text-align: left;
     padding: 15px;
   }
   
-  /* 4.2 remove default list-style-type */
+
   .skills ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
   
-  /* 4.3 css for skills all li */
+ 
   .skills ul li {
     border: 1px solid #1f1b1b;
     border-radius: 2px;
@@ -172,7 +162,7 @@ body {
     padding: 7px;
   }
   
-  /* 4.4 change color and bgcolor on hover */
+
   .skills ul li:hover {
     background-color: #1f1b1b;
     color: #fff;

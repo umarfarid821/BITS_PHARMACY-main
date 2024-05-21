@@ -1,4 +1,4 @@
-/* OrderList.css */
+
 
 .order-list-container {
     max-width: 1200px;
@@ -67,8 +67,8 @@
     }
   }
   .dashboard-link {
-    background-color: white; /* Change the background color */
-    color: black; /* Change the text color */
+    background-color: white; 
+    color: black; 
     text-decoration: none;
     padding: 8px 16px;
     border: 1px solid #ccc;

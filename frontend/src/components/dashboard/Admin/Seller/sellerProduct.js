@@ -42,47 +42,63 @@ const SellerProductsForm = ({ sellerName }) => {
     window.location.reload();
 }
 return (
-  <div className="SellerProductsForm">
-    <h2>Add Product</h2>
-    <form onSubmit={handleAddProduct}>
-      <label>
+  <div className="SellerProductsForm  mt-4 ">
+  <h2 className="mb-4">Add  Product</h2>
+  <form onSubmit={handleAddProduct}>
+    <div className="mb-3">
+      <label className="form-label">
         Medicine Name:
-        <input type="text" value={medicinename} onChange={(e) => setMedicineName(e.target.value)} required />
+        <input type="text" className="form-control" value={medicinename} onChange={(e) => setMedicineName(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Medicine Category:
-        <input type="text" value={medicinecategory} onChange={(e) => setMedicineCategory(e.target.value)} required />
+        <input type="text" className="form-control" value={medicinecategory} onChange={(e) => setMedicineCategory(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Expiry Date:
-        <input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} required />
+        <input type="text" className="form-control" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Manufacturing Date:
-        <input type="text" value={manufacturingDate} onChange={(e) => setManufacturingDate(e.target.value)} required />
+        <input type="text" className="form-control" value={manufacturingDate} onChange={(e) => setManufacturingDate(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Made In:
-        <input type="text" value={madeIn} onChange={(e) => setMadeIn(e.target.value)} required />
+        <input type="text" className="form-control" value={madeIn} onChange={(e) => setMadeIn(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Price:
-        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="text" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} required />
       </label>
+    </div>
 
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         Specification:
-        <input type="text" value={specification} onChange={(e) => setSpecification(e.target.value)} required />
+        <input type="text" className="form-control" value={specification} onChange={(e) => setSpecification(e.target.value)} required />
       </label>
+      <button type="submit" className="btn btn-primary" onClick={() => handleRefresh()}>Add Product</button>
 
-      <button type="submit" onClick={() => handleRefresh()}>Add Product</button>
+    </div>
+
     </form>
-  </div>
+</div>
+
 );
 };
 

@@ -34,32 +34,34 @@ const SellerDetails = () => {
   }
   console.log('Seller name:', seller.name);
   return (
-    <div className="seller-details-container">
-      <Navbar />
-      <h1>Seller Details</h1>
+    <div className="seller-details-container overflow-scroll-seller">
+  <Navbar />
+  
+ 
+  <div className="row">
+    <div className="col-md-6  d-sel">
+      <h1>Seller Details For {seller.name}</h1>
       <div className="seller-info">
-        <p className='Name'><strong>Name:</strong> {seller.name}</p>
-        <p className='Email'><strong>Email:</strong> {seller.email}</p>
-        <p className='PN'><strong>Phone Number:</strong> {seller.phoneNumber}</p>
-        <p className='AD'><strong>Address:</strong> {seller.address}</p>
-        <p className='CT'><strong>City:</strong> {seller.city}</p>
-        <p className='UN'><strong>Username:</strong> {seller.username}</p>
-
-
-        <div className="seller-products-form">
-    
-        <SellerProductsForm sellerName={seller.name} />
-        
-       
+        <p className='custom-seller '><strong>Name:</strong> {seller.name}</p>
+        <p className='custom-seller'><strong>Email:</strong> {seller.email}</p>
+        <p className='custom-seller'><strong>Phone Number:</strong> {seller.phoneNumber}</p>
+        <p className='custom-seller'><strong>Address:</strong> {seller.address}</p>
+        <p className='custom-seller'><strong>City:</strong> {seller.city}</p>
+        <p className='custom-seller'><strong>Username:</strong> {seller.username}</p>
       </div>
-      </div>
-
-      
-      <div>
-    
-      </div>
-     
     </div>
+
+   
+    <div className="col-md-6  my-bg">
+      <h1 className='sellerh'>Create Seller</h1>
+      <div className="seller-products-form">
+        <SellerProductsForm sellerName={seller.name} />
+      </div>
+    </div>
+  </div>
+</div>
+
+
   );
 };
 

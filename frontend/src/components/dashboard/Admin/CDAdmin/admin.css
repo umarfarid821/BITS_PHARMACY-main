@@ -1,4 +1,4 @@
 .scroll-admincss {
-    overflow-y: scroll; /* Enable vertical scrolling */
-    height: 100vh; /* Set the height to occupy the full viewport height */
+    overflow-y: scroll; 
+    height: 100vh; 
   }

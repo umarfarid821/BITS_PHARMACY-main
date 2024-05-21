@@ -1,20 +1,18 @@
-/* Stock.css */
 
-/* Medicine Container Styles */
 .medicine-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  /* Medicine List Styles */
+  
   .medicine-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
   
-  /* Medicine Card Styles */
+  
   .medicine-card {
     
     background-color: blue;
@@ -42,13 +40,13 @@
     }
   }
   
-  /* Error Styles */
+ 
   .error {
     color: #ff0000;
     font-weight: bold;
     margin-top: 20px;
   }
-  /* modalStyles.css */
+  
 
 .modal-size{
     width: 100%;
@@ -70,7 +68,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Add styles for the modal overlay and content */
+  
 .modal-overlay {
   position: fixed;
   top: 0;

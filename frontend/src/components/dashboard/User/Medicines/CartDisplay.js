@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./CartDisplay.css";
 import NavBar from "../User_Navbar";
+import Footer from "../Footer";
 const CartDisplay = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ const CartDisplay = () => {
   return (
     <div>
     <NavBar />
-    <div className="cart-container">
+    <div className="cart-container ">
       <nav className="navbar">
         <div className="navbar-title">Your Online BitsStore</div>
         <button className="add-product-btn" onClick={handleAddProduct}>
@@ -122,7 +123,18 @@ const CartDisplay = () => {
           Proceed to Checkout
         </button>
       </nav>
-    </div></div>
+    </div>
+    
+    
+   <div className="pt-5">
+      <Footer />
+
+      </div>
+
+
+    
+    
+    </div>
   );
 };
 

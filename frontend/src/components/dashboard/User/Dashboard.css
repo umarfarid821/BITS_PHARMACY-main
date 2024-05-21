@@ -1,13 +1,13 @@
 .my-dashboard{
 
-    background-image: url('./images/f.jpg'); /* Add background image */
-    background-size: cover; /* Add background size */
-    background-position: center; /* Add background position */
-    padding: 7em 0; /* Add padding */
-    color: #fff; /* Add color */
-    text-align: center; /* Add text align */
-    position: relative; /* Add position */
-    height: 70vh; /* Add height */
+    background-image: url('./images/f.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    padding: 7em 0; 
+    color: #fff; 
+    text-align: center; 
+    position: relative; 
+    height: 70vh; 
 
 }
 
@@ -15,8 +15,8 @@
   padding-top:100px;
 }
 .scroll {
-  overflow-y: scroll; /* Enable vertical scrolling */
-  height: 100vh; /* Set the height to occupy the full viewport height */
+  overflow-y: scroll; 
+  height: 100vh; 
 }
 
 

@@ -1,7 +1,7 @@
 .my-change{
     padding-left: 300px;
 }
-/* Custom styles for the table */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -22,7 +22,7 @@ table {
     background-color: #f2f2f2;
   }
   
-  /* Custom styles for the modal */
+ 
   .modal {
     display: none;
     position: fixed;

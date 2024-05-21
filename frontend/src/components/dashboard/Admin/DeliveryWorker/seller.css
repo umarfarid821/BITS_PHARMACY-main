@@ -1,4 +1,4 @@
-/* CreateAdmin.css */
+
 
 .create-admin-container {
     background-color: #f7f7f7;
@@ -10,8 +10,8 @@
   }
 .de-wk{
   
-    overflow-y: scroll; /* Enable vertical scrolling */
-    height: 100vh; /* Set the height to occupy the full viewport height */
+    overflow-y: scroll; 
+    height: 100vh; 
   
   
 }
@@ -49,5 +49,4 @@
     background-color: #0056b3;
   }
   
-  /* You can add more styles as needed for your design */
   

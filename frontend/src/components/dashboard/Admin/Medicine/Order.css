@@ -40,13 +40,19 @@
   height: 100vh;
  
   
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
 }
 .card-padd{
   padding-left: 400px;
 }
 
-
+.workername{
+  background-color: #1e81b0;
+    
+  border: 2px solid #007bff;
+  padding: 10px; 
+  border-radius: 5px;
+}
 
 
 

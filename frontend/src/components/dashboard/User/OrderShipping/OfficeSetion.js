@@ -2,7 +2,7 @@ import React from 'react';
 import './OfficeSection.css';
 const OfficesSection = () => {
   return (
-    <div className="site-section bg-primary os ">
+    <div className="site-section  os ">
       <div className="container">
         <div className="row">
           <div className="col-12">

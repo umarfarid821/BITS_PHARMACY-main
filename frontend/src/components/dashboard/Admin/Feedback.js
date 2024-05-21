@@ -47,6 +47,7 @@ const SeeFeedback = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log('Feedback data:', response.data);
         setFeedbackData(response.data);
         setLoading(false);
       } catch (error) {
@@ -72,7 +73,11 @@ const SeeFeedback = () => {
                   <CardTitle>Feedback from {feedback.name}</CardTitle>
                   <CardText>
                     <strong>Email:</strong> {feedback.email}<br />
-                    <strong>Feedback:</strong> {feedback.feedback}
+                    <strong>Subject:</strong> {feedback.subject}<br />
+                    <strong>Message:</strong> {feedback.message}<br />
+                    
+
+                    
                   </CardText>
                 </div>
               </Card>

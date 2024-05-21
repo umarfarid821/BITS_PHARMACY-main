@@ -1,12 +1,11 @@
-/* CreateAdmin.css */
 
 
-  /* You can add more styles as needed for your design */
+ 
   .seller-scroll {
-    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-y: scroll; 
     height: 100vh;
      
-     /* Set the height to occupy the full viewport height */
+     
   }
   .seller-page-style{
     padding-left:200px;

@@ -60,7 +60,7 @@ const FeedbackForm = () => {
   return (
     <div className='scroll-fb'>
       <NavBar />
-      <div className="site-section ufb">
+      <div className="site-section ufb bg-light">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -161,7 +161,7 @@ const FeedbackForm = () => {
           </div>
         </div>
       </div>
-      <div className='ufb'>
+      <div className='ufb fb-color'>
       
       <OfficesSection />
       </div>

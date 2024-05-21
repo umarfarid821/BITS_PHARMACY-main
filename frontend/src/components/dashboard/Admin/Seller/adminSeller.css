@@ -7,7 +7,7 @@
 .cart-slide{
     height: 100vh;
    
-    /* Set height to fill viewport */
+  
     
-   overflow-y: auto; /* Enable vertical scrolling */
+   overflow-y: auto; 
   }

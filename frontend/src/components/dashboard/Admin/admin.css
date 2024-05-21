@@ -1,15 +1,15 @@
-/* Reset default margin and padding */
+
 * {
     margin: 0;
     padding: 0;
   }
   
-  /* Set a background color for the entire page */
+ 
   body {
     background-color: #f4f4f4;
   }
   
-  /* Styling for the navigation bar */
+ 
   .navbar {
     background-color: #333;
     display: flex;
@@ -27,7 +27,7 @@
     background-color: #555;
   }
   
-  /* Styling for the content section */
+ 
   .content {
     margin: 20px;
     padding: 20px;
@@ -47,21 +47,20 @@
     color: #555;
   }
   
-  /* Add more styles as needed for other components and pages */
-  /* Style the buttons */
+  
 button {
-    background-color: #3498db; /* Change the background color */
-    color: #fff; /* Change the text color */
-    border: none; /* Remove the button border */
-    padding: 10px 20px; /* Adjust padding for better appearance */
-    margin: 5px; /* Add some margin between buttons */
-    cursor: pointer; /* Change the cursor on hover */
-    border-radius: 5px; /* Add rounded corners */
-    font-size: 16px; /* Set font size */
+    background-color: #3498db; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 16px; 
   }
   
-  /* Style the buttons on hover */
+  
   button:hover {
-    background-color: #2980b9; /* Change background color on hover */
+    background-color: #2980b9; 
   }
   

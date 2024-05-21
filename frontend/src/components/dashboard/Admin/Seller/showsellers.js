@@ -64,7 +64,7 @@ const SellerList = () => {
   };
   return (
     <div className="container mt-4  showseller-pad">
-  <h1>Sellers List</h1>
+  <h1>Sellers List To Admin</h1>
   <button type="button" className="btn btn-dark" onClick={CreateSellerComponent} >Create New Seller</button>
   <table className="table table-striped table-bordered">
     <thead className="thead-dark">
@@ -78,7 +78,11 @@ const SellerList = () => {
       </tr>
     </thead>
     <tbody>
-      {admins.map((admin) => (
+
+    {admins.length > 0 ? (
+
+
+      admins.map((admin) => (
         <tr key={admin._id}>
           <td>{admin.username}</td>
           <td>{admin.email}</td>
@@ -90,7 +94,14 @@ const SellerList = () => {
             <button className="btn btn-primary btn-sm ml-2" onClick={() => handleShow(admin._id)}>Show</button>
           </td>
         </tr>
-      ))}
+      )) ): (
+        <tr>
+          <td colSpan="8" className="text-center">NO Seller Here</td>
+        </tr>
+      )}
+    
+    
+  
     </tbody>
   </table>
 </div>
