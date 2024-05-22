@@ -6,7 +6,10 @@ const LandingPage = () => {
     <div >
     
     
-    <NavBar/>
+    <div><NavBar/> </div>
+
+
+    
     <Screen/>
     
     </div>

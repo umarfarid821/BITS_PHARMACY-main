@@ -14,7 +14,7 @@
 .fix{
   padding-top:100px;
 }
-.scroll {
+.scroll-admin {
   overflow-y: scroll; 
   height: 100vh; 
 }

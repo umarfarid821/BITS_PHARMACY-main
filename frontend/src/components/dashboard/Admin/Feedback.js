@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import NavBar from './Admina_Savbar';
-
+import './Feedback.css';
 const FeedbackContainer = styled.div`
   margin: 20px;
-  padding-left: 250px;
+  padding-left: 50px;
 `;
 
 const CardContainer = styled.div`
@@ -14,7 +14,7 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
-  width: 300px;
+  width: 35%;
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -59,17 +59,19 @@ const SeeFeedback = () => {
   }, []);
 
   return (
-    <div>
+    <div className="custom-feedback-scroll">
       <NavBar />
       <FeedbackContainer>
-        <h2>Feedback</h2>
+      <div className='mt-5 justify-content-center align-items-center d-flex '>
+      <p className='text-center order-admin bg-light text-black'>  Welcome To Clients Messages</p>
+      </div>
         {loading ? (
           <p>Loading...</p>
         ) : (
           <CardContainer>
             {feedbackData.map((feedback, index) => (
               <Card key={index}>
-                <div className="card-body">
+                <div className="card-body text-center">
                   <CardTitle>Feedback from {feedback.name}</CardTitle>
                   <CardText>
                     <strong>Email:</strong> {feedback.email}<br />

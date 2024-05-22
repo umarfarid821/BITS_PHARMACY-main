@@ -1,7 +1,4 @@
-.left-pad{
 
-   padding-left: 40px;
-}
 
 .scroll-admin {
   overflow-y: scroll; 
@@ -20,4 +17,11 @@
   border-color: #000;
   width: 400px;
   padding-left: 20px;
+ 
 }
+.s-container{
+   margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+

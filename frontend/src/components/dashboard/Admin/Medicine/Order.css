@@ -1,17 +1,39 @@
 
 
 .order-list-container {
-  padding-left: 300px;
+  padding-left: 30px;
   padding-top: 50px;
  
+}
+
+.list-group-item{
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+ 
+
+  
 }
 .card-my-style{
   border: 1px solid #ccc;
   border-radius: 5px;
   border-color: #ccc;
   padding: 30px;
+  
  ;
 
+}
+.card1{
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -21,10 +43,13 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   border-color: #ccc;
-  padding: 30px;
-  font-size: 30px;
+  padding: 15px;
+  font-size: 15px;
   color: #000;
   background-color: blue;
+  width: 90%;
+  text-align: center;
+  
 
 }
 .p-style:hover{
@@ -42,9 +67,6 @@
   
   overflow-y: auto;
 }
-.card-padd{
-  padding-left: 400px;
-}
 
 .workername{
   background-color: #1e81b0;
@@ -54,6 +76,12 @@
   border-radius: 5px;
 }
 
+.od{
+  background-color: #1e81b0;
+  border: 2px solid #007bff;
+  padding: 10px; 
+  border-radius: 5px;
+}
 
 
 

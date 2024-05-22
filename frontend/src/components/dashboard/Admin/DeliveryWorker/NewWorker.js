@@ -61,45 +61,45 @@ const CreateDeliveryWorker = () => {
             <Navbar />
             <div className="create-admin-container">
                 <h1 className="create-admin-title">Create a New Worker</h1>
-                <Form className="create-admin-form" onSubmit={handleRegistrationSubmit}>
+                <Form className="create-admin-form " onSubmit={handleRegistrationSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" name="email" value={registrationData.email} onChange={handleRegistrationPage} required />
+                        <Form.Control className="text-center" type="email" placeholder="Enter email" name="email" value={registrationData.email} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicGender">
                         <Form.Label>Gender</Form.Label>
-                        <Form.Control type="text" placeholder="Gender" name="gender" value={registrationData.gender} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text" className="text-center" placeholder="Gender" name="gender" value={registrationData.gender} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicUsername">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Username" name="username" value={registrationData.username} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text" className="text-center" placeholder="Username" name="username" value={registrationData.username} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                         <Form.Label>Phone Number</Form.Label>
-                        <Form.Control type="text" placeholder="Phone Number" name="phoneNumber" value={registrationData.phoneNumber} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text" className="text-center" placeholder="Phone Number" name="phoneNumber" value={registrationData.phoneNumber} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="password" value={registrationData.password} onChange={handleRegistrationPage} required />
+                        <Form.Control type="password"  className="text-center" placeholder="Password" name="password" value={registrationData.password} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control type="text" placeholder="Address" name="address" value={registrationData.address} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text"  className="text-center"placeholder="Address" name="address" value={registrationData.address} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCity">
                         <Form.Label>City</Form.Label>
-                        <Form.Control type="text" placeholder="City" name="city" value={registrationData.city} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text" className="text-center" placeholder="City" name="city" value={registrationData.city} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Name" name="name" value={registrationData.name} onChange={handleRegistrationPage} required />
+                        <Form.Control type="text" className="text-center"  placeholder="Name" name="name" value={registrationData.name} onChange={handleRegistrationPage} required />
                     </Form.Group>
 
                     <Button className="create-admin-button" variant="primary" type="submit">Create Delivery Worker</Button>

@@ -154,101 +154,103 @@ const handleAssignOrder = async (orderId,username) => {
 
 
   return (
-   <div className="card-container bg-secondary">
-   <NavBar/>
- 
-   <div className='order-list-container'>
-   <div  className='row  '>
-     <p className='p-style'>Total Orders: {totalOrders}</p>
-     <p className='p-style' >Total Orders Today: {totalOrdersToday}</p>
-     <p className='p-style'>Total Orders Yesterday: {totalOrdersYesterday}</p>
-     <p className='p-style'>Total Sales: ${totalSales}</p>
-   </div>
-   
-  
-  
- 
-   <div className="container bg-primary card-my-style mt-2">
-   <div className="row">
-     {orders.length === 0 ? (
-       <div className="col-12">
-         <div className="card text-center">
-           <div className="card-body">
-             <h5 className="card-title">No Orders</h5>
-             <p className="card-text">There are no orders to display at this time.</p>
-           </div>
-         </div>
-       </div>
-     ) : (
-       orders.map((order, index) => (
-         <div key={order._id} className="col-md-4">
-           <div className="card mb-3" style={{ borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
-             <div className="list-group list-group-flush">
-               <div className="list-group-item">
-                 <p>Order No: {index + 1}</p> {/* Adding order number */}
-                 <p>Order ID: {order._id}</p>
-                 <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
-                 <p>Order Status: {order.OrderStatus}</p>
-               </div>
-               <div>
-                 {order.shippingAddress && (
-                   <p>
-                     Name: {order.shippingAddress.name},
-                     Address: {order.shippingAddress.address},
-                     City: {order.shippingAddress.city},
-                     State: {order.shippingAddress.state}
-                     PostalCode: {order.shippingAddress.postalCode}
-                   </p>
-                 )}
-                 <p>Payment Method: {order.paymentMethod}</p>
-                 <div>
-                   <p>Items:</p>
-                   <ul>
-                     {order.cartItems.map((item) => (
-                       <li key={item._id}>
-                         {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
-                       </li>
-                     ))}
-                   </ul>
-                 </div>
-                 <p>Total Amount: ${order.totalAmount}</p>
-               </div>
-               <p>Assigned Order To</p>  {/* Add a button to assign order to a worker */}
-               <div className="text-center">
-                 <button className="btn btn-primary" onClick={() => handlefetchWorkers(order._id)}>Assign Order</button>
-                 <div>
-                 {workersNames.length > 0 ? (
-                   <>
-                     <h3>Workers Names</h3>
-                     <ul>
-                       {workersNames.map((username, index) => (
-                         <li className='workername' key={index} onClick={() => handleAssignOrder(order._id, username)} style={{ cursor: 'pointer' }}>
-                           {username}
-                         </li>
-                       ))}
-                     </ul>
-                   </>
-                 ) : (
-                   <p>No workers available</p>
-                 )}
-               </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       ))
-     )}
-   </div>
- </div>
- 
- 
-    
-
-  
- </div>
- 
-   </div>
+    <div className="container-fluid bg-light">
+      <NavBar />
+      <div className="row">
+        <div className="col-md-3">
+          <div className="card-container bg-secondary">
+            <div className='order-list-container'>
+              <div className='row'>
+                <p className='p-style'>Total Orders: {totalOrders}</p>
+                <p className='p-style'>Total Orders Today: {totalOrdersToday}</p>
+                <p className='p-style'>Total Orders Yesterday: {totalOrdersYesterday}</p>
+                <p className='p-style'>Total Sales: ${totalSales}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-9">
+          <div className="card-container bg-primary card-my-style mt-2">
+            <div className="row">
+              {orders.length === 0 ? (
+                <div className="col-12">
+                  <div className="card1 text-center">
+                    <div className="card-body">
+                      <h5 className="card-title">No Orders</h5>
+                      <p className="card-text">There are no orders to display at this time.</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                orders.map((order, index) => (
+                  <div key={order._id} className="">
+                    <div className="card1 mb-3" style={{ borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
+                      <div className="list-group list-group-flush">
+                        <div className="list-group-item">
+                          <p>Order No: {index + 1}</p>
+                          <p>Order ID: {order._id}</p>
+                          <p>Order Date: {new Date(order.createdAt).toLocaleString()}</p>
+                          <p>Order Status: {order.OrderStatus}</p>
+                        </div>
+                        <div className='text-white'>
+                          {order.shippingAddress && (
+                            <p className='text-white text-center od'>
+                              Name: {order.shippingAddress.name}
+                              <br></br>
+                              Address: {order.shippingAddress.address}
+                              <br></br>
+                              City: {order.shippingAddress.city}
+                              <br></br>
+                              State: {order.shippingAddress.state}
+                              <br></br>
+                              PostalCode: {order.shippingAddress.postalCode}
+                            </p>
+                          )}
+                          <p>Payment Method: {order.paymentMethod}</p>
+                          <div>
+                            <p>Items:</p>
+                            <ul>
+                              {order.cartItems.map((item) => (
+                                <li key={item._id}>
+                                  {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <p>Total Amount: ${order.totalAmount}</p>
+                        </div>
+                        <p>Assigned Order To</p>
+                        <div className="text-center">
+                          <button className="btn btn-primary" onClick={() => handlefetchWorkers(order._id)}>Assign Order</button>
+                          <div>
+                            {workersNames.length > 0 ? (
+                              <>
+                                <h3>Workers Names</h3>
+                                <ul>
+                                  {workersNames.map((username, index) => (
+                                    <li className='workername' key={index} onClick={() => handleAssignOrder(order._id, username)} style={{ cursor: 'pointer' }}>
+                                      {username}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </>
+                            ) : (
+                              <p>No workers available</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
+  
 }
 
 export default Card;

@@ -1,7 +1,26 @@
 import React from 'react';
-import './style.css';
-
+import { useState } from 'react';
+import { Navbar, Container, Nav, Button,Form } from 'react-bootstrap';
+ 
 const Sidebar = () => {
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleMouseDown = () => {
+    setIsActive(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsActive(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsActive(false);
+  };
+
+
+
+
   const AdminProfile = () => {
     window.location.href = '/admin/onlyprofile';
   };
@@ -40,63 +59,89 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar">
-      <div className="logo-details">
-        <i className="bx bxl-c-plus-plus"></i>
-        <span className="logo_name">Bits Pharmacy</span>
+    <Navbar bg="danger" data-bs-theme="dark">
+    <Button variant="danger" 
+         className={`nav-item ${isActive ? 'my-active' : ''}`}
+         onMouseDown={handleMouseDown}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseLeave} onClick={Home}>Bits Pharmacy</Button>
+    
+      <Container>
+       
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto bg-danger  ">
+         
+            
+         <Button variant="danger" 
+         className={`nav-item ${isActive ? 'my-active' : ''}`}
+         onMouseDown={handleMouseDown}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseLeave} onClick={Home}>Home</Button>
+
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={ShowStockMedicine}>Medicine Stock</Button>
+
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={ClientOrders}>User Orders</Button>
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={UserFeedback}>User Feedback</Button>
+    
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={AdminPannel}>Admins Information</Button>
+          
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={DeliveryWorker}>Delivery Workers</Button>
+
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={SellerSection}>Seller Section</Button>
+
+          
+          
+          <Button variant="danger"
+          className={`nav-item ${isActive ? 'my-active' : ''}`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave} onClick={handleLogout}>Logout</Button>
+
+
+         
+
+         
+        
+        </ul>
+        
+        
+       
       </div>
-      <ul className="nav-links myadmin">
-        <li>
-          <button className="active  back" onClick={Home}>
-            <i className="bx bx-grid-alt"></i>
-            <span className="links_name">Home</span>
-          </button>
-        </li>
-        <li>
-          <button className="active back" onClick={ShowStockMedicine}>
-            <i className="bx bx-box"></i>
-            <span className="links_name">Stock Medicine</span>
-          </button>
-        </li>
-        <li>
-          <button className="active back" onClick={ClientOrders}>
-            <i className="bx bx-list-ul"></i>
-            <span className="links_name">Order list</span>
-          </button>
-        </li>
-        <li>
-          <button className="active  back" onClick={SellerSection}>
-            <i className="bx bx-pie-chart-alt-2"></i>
-            <span className="links_name">Medicine Buy</span>
-          </button>
-        </li>
-        <li>
-          <button className="active back" onClick={UserFeedback}>
-            <i className="bx bx-coin-stack"></i>
-            <span className="links_name">Feedback</span>
-          </button>
-        </li>
-        <li>
-          <button className="active back" onClick={DeliveryWorker}>
-            <i className="bx bx-book-alt"></i>
-            <span className="links_name">Delivery Worker</span>
-          </button>
-        </li>
-     
-        <li>
-          <button className="active back" onClick={AdminPannel}>
-            <i className="bx bx-message"></i>
-            <span className="links_name">AdminPannel</span>
-          </button>
-        </li>
-        <li className="log_out active" onClick={handleLogout}>
-          <button className='back'>
-            <i className="bx bx-log-out"></i>
-            <span className="links_name ">Log out</span>
-          </button>
-        </li>
-      </ul>
-    </div>
+      <Form className="d-flex my-form">
+      <Form.Control
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+      />
+
+    </Form>
+      </Container>
+    </Navbar>
   );
 }
 

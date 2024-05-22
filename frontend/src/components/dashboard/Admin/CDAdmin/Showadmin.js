@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './list.css';
+import './showadmin.css';
 import Table from 'react-bootstrap/Table';
 const AdminList = () => {
   const [admins, setAdmins] = useState([]);
@@ -54,12 +54,12 @@ const AdminList = () => {
 
   return (
     <div className="" >
-      <h1>Admin List</h1>
-     <div className="pad1">
+      
+     <div className="admin-list-pd" >
      
      
-     <Table bordere strd hover variant="danger" >
-     <thead>
+     <Table className="table table-striped table-bordered " >
+     <thead className="thead-dark">
        <tr>
          <th>Username</th>
          <th>Email</th>
@@ -79,7 +79,7 @@ const AdminList = () => {
            <td>{admin.address}</td>
            <td>{admin.gender}</td>
            <td>
-             <button onClick={() => handleDelete(admin._id)}>Delete</button>
+             <button  className="btn-danger btn-sm" onClick={() => handleDelete(admin._id)}>Delete</button>
            </td>
          </tr>
        ))

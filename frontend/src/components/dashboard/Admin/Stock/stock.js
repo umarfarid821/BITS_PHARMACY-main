@@ -108,22 +108,22 @@ const StockMedicine = () => {
   };
 
   return (
-    <div className='bg-info  scroll-admin'>
+    <div className='bg-light  scroll-admin'>
       <NavBar />
 
-      <div className="medicine-container">
+      <div className='s-container'>
        <div className='container-stock'>
-       <h2>Stock Medicines</h2>
+       <h2 className='text-center'>Stock Medicines Showing To Admin</h2>
        <p className='stock-style'>Total Medicines in Stock: {totalMedicinesInStock}</p>
        </div>
 
         {error && <pw33rs className="error">{error}</pw33rs>}
 
-       <div className='left-pad'>
+       <div className="table-responsive ">
        
-       <Table striped="columns"   >
+       <Table  className='table table-striped table-bordered '   >
        <thead>
-         <tr class="table-primary">
+         <tr class="table-primary ">
            <th>Medicine Name</th>
            <th>Quantity</th>
            <th>Price</th>
@@ -132,7 +132,8 @@ const StockMedicine = () => {
            <th>Manufacturing Date</th>
            <th>Made In</th>
            <th>No of Tablets</th>
-           <th>Actions</th>
+           <th >Actions</th>
+           <th>Medicine Detail</th>
          </tr>
        </thead>
        <tbody>
@@ -147,10 +148,12 @@ const StockMedicine = () => {
              <td>{medicine.madeIn}</td>
              <td>{medicine.nooftablets}</td>
              <td className='inc-td'>
-               <button className="Update" onClick={() => handleUpdate(medicine)}>Update</button>
-               <button className="Delete" type="button" onClick={() => handleDelete(medicine._id)}>Delete</button>
-               <button className="MedicineDetail" onClick={() => handleMedicineDetail(medicine.sellerName, medicine._id)}>Medicine Detail</button>
-             </td>
+               <button className="btn btn-primary btn-sm" onClick={() => handleUpdate(medicine)}>Update</button>
+               <button className="btn btn-danger btn-sm ml-2" type="button" onClick={() => handleDelete(medicine._id)}>Delete</button>
+                   </td>
+
+                <td> <button className="btn btn-primary btn-sm " onClick={() => handleMedicineDetail(medicine.sellerName, medicine._id)}>Medicine Detail</button>
+                </td>
            </tr>
          ))}
        </tbody>

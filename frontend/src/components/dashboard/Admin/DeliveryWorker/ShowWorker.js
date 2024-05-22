@@ -86,8 +86,8 @@ const NewWorker = async () => {
 
   
   return (
-    <div className="pad bg-secondary">
-    <h1>Workers List To Admin</h1>
+    <div className="pad bg-light custom-scroll-worker">
+    <h1 className="text-center">Workers List To Admin</h1>
     <Button className=" btn-secondary btn-style" onClick={NewWorker}  > Create New Worker</Button>
     <Table bordere strd hover variant="dark">
       <thead>
@@ -113,7 +113,7 @@ const NewWorker = async () => {
             <td>{admin.gender}</td>
             <td>{admin.assignedMedicine}</td>
             <td>
-              <Button onClick={() => handleDelete(admin._id)}>Delete Worker</Button>
+              <Button className="btn-danger btn-sm"  onClick={() => handleDelete(admin._id)}>Delete Worker</Button>
             </td>
             <td>
               <div>
@@ -121,11 +121,12 @@ const NewWorker = async () => {
                   value={selectedStatus}
                   onChange={(e) => setSelectedStatus(e.target.value)}
                 >
-                  <option value="">Select status</option>
+                  <option >Select status</option>
                   <option value="Order Delivered">Order Delivered</option>
                   <option value="Order Returned">Order Returned</option>
                 </select>
                 <button
+                className="btn-sm"
                   onClick={() => ChangeMedicineStatus(admin.assignedMedicine)}
                 >
                   Change Order Status
