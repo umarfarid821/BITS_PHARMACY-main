@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div className="block-7">
               <h3 className="footer-heading mb-4 ">About Us</h3>
-              <p>At Bits Pharmacy, expect nothing short of excellence in product delivery and services.</p>
+              <p className='text-white'>At Bits Pharmacy, expect nothing short of excellence in product delivery and services.</p>
             </div>
           </div>
           <div className="col-lg-3 mx-auto mb-5 mb-lg-0">

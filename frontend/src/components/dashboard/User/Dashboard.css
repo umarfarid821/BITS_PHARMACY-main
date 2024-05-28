@@ -18,5 +18,20 @@
   overflow-y: scroll; 
   height: 100vh; 
 }
-
+.effect{
+  
+  padding: 1em; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  margin-bottom: 1em; 
+}
+.effect:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+}
+.wd-d{
+  
+}
+.feat{
+  padding-top:20px;
+}
 

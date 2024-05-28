@@ -81,9 +81,9 @@ const CartDisplay = () => {
   };
   
   return (
-    <div>
+    <div className="scroll-cart">
     <NavBar />
-    <div className="cart-container ">
+    <div className="cart-container">
       <nav className="navbar">
         <div className="navbar-title">Your Online BitsStore</div>
         <button className="add-product-btn" onClick={handleAddProduct}>
