@@ -77,7 +77,7 @@ const AddMedicineToStock = () => {
 
 <div className="add-medicine-card">
 <div className="card-header">
-  <h2>Add Medicine to Stock</h2>
+  <h2>Add Medicine to   Stock</h2>
 </div>
 <div className="card-body">
   <form onSubmit={handleSubmit}>

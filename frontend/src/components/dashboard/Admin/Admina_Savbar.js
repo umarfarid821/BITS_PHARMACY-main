@@ -131,15 +131,7 @@ const Sidebar = () => {
         
        
       </div>
-      <Form className="d-flex my-form">
-      <Form.Control
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-      />
-
-    </Form>
+      
       </Container>
     </Navbar>
   );

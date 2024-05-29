@@ -11,14 +11,10 @@ import Footer from '../Footer';
 
 const UserStockMedicine = () => {
   const [medicines, setMedicines] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [dimensions, setDimensions] = useState({ width: '17rem', height: '40rem' });
-  
-  const [ProductPrice, setPrice] = useState(null);
-  const [Noofproducts, setNoofproducts] = useState(null);
-  const [Productname, setProductname] = useState(null);
-  const [productId, setProductId] = useState(null);
 
   const addToCartHandler = async (medicine) => {
     const token = localStorage.getItem('token');
@@ -59,31 +55,51 @@ const UserStockMedicine = () => {
     fetchUserStockMedicines();
   }, []);
 
-  return (
-    <div   className='overflow-scroll-USerMedicine '>
-      <Navbar />
-      <div >
-        <Row xs={1} md={4} className="g-3  ">
-          {medicines.map((medicine, idx) => (
-            <Col key={idx}>
-            <div className="d-flex my-card   ">
-            <div className="card bg-primary " style={{ width: dimensions.width, height: dimensions.height }}>
-              <img src={Img} className="card-img-top" alt="..." />
-              <div className="card-body bg-black">
-                <h5 className="card-title ">Name : {medicine.medicineName}</h5>
-                <p className="card-text ">Description Of Medicine</p>
-                <p className="card-text ">Available Quantity : {medicine.adminmedicinequantity}</p>
-                <p  className="card-text "  >Price : {medicine.adminmedicineprice}</p>
-                <p className=' card-text '>Expiry Date : {medicine.expiryDate}</p>
-               
-                <div className='pt-3 pt-md-5'>
-                <button onClick={() => addToCartHandler(medicine)}>Add to Cart</button>
-                
-                </div>
-            </div>
-            </div>
-          </div>
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Additional logic for handling search submit can be added here if needed
+  };
 
+  const filteredMedicines = medicines.filter(medicine =>
+    medicine.medicineName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className='overflow-scroll-USerMedicine bg-light'>
+      <Navbar />
+      <form className="form-inline my-2 my-lg-0 d-flex justify-content-center align-items-center " onSubmit={handleSearchSubmit}>
+      <input
+        className="form-control mr-sm-2  mt-3 "
+        type="search"
+        placeholder="Search Medicine"
+        aria-label="Search"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
+      <button className="btn btn-outline-success  btn-sm" type="submit">Search</button>
+    </form>
+      <div>
+        <Row xs={1} md={4} className="g-3">
+          {filteredMedicines.map((medicine, idx) => (
+            <Col key={idx}>
+              <div className="d-flex my-card">
+                <div className="card bg-primary" style={{ width: dimensions.width, height: dimensions.height }}>
+                  <img src={Img} className="card-img-top" alt="..." />
+                  <div className="card-body bg-black">
+                    <h5 className="card-title">Name : {medicine.medicineName}</h5>
+                    <p className="card-text">Description Of Medicine</p>
+                    <p className="card-text">Available Quantity : {medicine.adminmedicinequantity}</p>
+                    <p className="card-text">Price : {medicine.adminmedicineprice}</p>
+                    <p className='card-text'>Expiry Date : {medicine.expiryDate}</p>
+                    <div className='pt-3 pt-md-5'>
+                      <button onClick={() => addToCartHandler(medicine)}>Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Col>
           ))}
         </Row>

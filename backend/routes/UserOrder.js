@@ -8,4 +8,7 @@ router.post('/place-order', authenticateToken, UserOrder.AddToOrder);
 router.get('/AdminOrder', authenticateToken, UserOrder.getOrder);
 // Get a specific order
 router.get('/UserOrder', authenticateToken, UserOrder.getOrderByEmail);
+
+// Delete an order
+router.delete('/delete-order/:id', authenticateToken, UserOrder.deleteOrder);
 module.exports = router;

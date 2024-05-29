@@ -33,8 +33,18 @@ const Getfeedback = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+const deleteFeedback = async (req, res) => {
+  try {
+    const feedback = await FeedbackModel.findByIdAndDelete(req.params.id);
+    res.status(200).json(feedback);
+  } catch (error) {
+    console.error('Error while deleting feedback:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
 
 module.exports = {
   submitFeedback,
-  Getfeedback
+  Getfeedback,
+  deleteFeedback,
 };

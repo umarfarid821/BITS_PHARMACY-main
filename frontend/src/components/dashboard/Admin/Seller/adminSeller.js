@@ -39,7 +39,7 @@ const SellerDetails = () => {
     <div className='bg-dark cart-slide' >
         <NavBar />
         <div className="adminSellerpad container">
-        <h1>Seller Details To Admin</h1>
+        <h1 className='text-white'>Seller Details To Admin</h1>
       
        <div className='details-admin'>
        

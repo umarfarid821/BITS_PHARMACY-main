@@ -34,13 +34,13 @@ const SellerDetails = () => {
   }
   console.log('Seller name:', seller.name);
   return (
-    <div className="seller-details-container overflow-scroll-seller">
+    <div className="seller-details-container overflow-scroll-seller bg-primary">
   <Navbar />
   
  
   <div className="row">
     <div className="col-md-6  d-sel">
-      <h1>Seller Details For {seller.name}</h1>
+      <h1 className='text-white'>Seller Details For {seller.name}</h1>
       <div className="seller-info">
         <p className='custom-seller '><strong>Name:</strong> {seller.name}</p>
         <p className='custom-seller'><strong>Email:</strong> {seller.email}</p>

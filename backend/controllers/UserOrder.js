@@ -71,11 +71,23 @@ const AddToOrder = async (req, res) => {
         }
     };
 
+    const deleteOrder = async (req, res) => {
+        const { id } = req.params;
+        try {
+            const order = await UserOrder.findByIdAndDelete(id);
+            res.status(200).json({ message: 'Order deleted successfully', order });
+        } catch (error) {
+            console.error('Error while deleting order:', error);
+            res.status(500).json({ message: 'Server error' });
+        }
+    };
+
 
     module.exports = {
 
         AddToOrder,
         getOrder,
         getOrderByEmail,
+        deleteOrder,
 
     };

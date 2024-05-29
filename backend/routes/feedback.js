@@ -7,4 +7,7 @@ const { authenticateToken } = require('../middlewares/auth');
 router.post('/submit-feedback',authenticateToken, feedbackcontroller.submitFeedback);
 
 router.get('/getfeedback',authenticateToken,feedbackcontroller.Getfeedback);
+
+router.delete('/delete-feedback/:id',authenticateToken,feedbackcontroller.deleteFeedback);
+
 module.exports = router;

@@ -15,6 +15,7 @@ const AddMedicineToStock = (props) => {
   const [error, setError] = useState(null);
   const [nooftablet, setNooftablets] = useState([]);
   const [showNextMedicine, setShowNextMedicine] = useState(false); // State to track visibility of next medicine card
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
 
   useEffect(() => {
     const fetchMedicineDetails = async () => {
@@ -79,15 +80,26 @@ const AddMedicineToStock = (props) => {
     }
   };
 
+  // Filter medicines based on the search query
+  const filteredMedicines = medicines.filter(medicine =>
+    medicine.medicinename.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mt-4">
-      <h1>Add Medicine to the Stock</h1>
-      <div className="row">
-        {medicines.map((medicine, index) => (
+      <h1  className='text-white'>Add Medicine to the Stock</h1>
+      <input 
+        type="text" 
+        placeholder="Search medicine..." 
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="form-control mb-4"
+      />
+      <div className="row bg-light">
+        {filteredMedicines.map((medicine, index) => (
           <div key={medicine._id} className="col-md-4 mb-6">
             <h3 className='getmedicine'>Medicine {index + 1}</h3>
             <MedicineCard
-            
               medicine={medicine}
               index={index}
               handleSubmit={handleSubmit}

@@ -58,8 +58,31 @@ const SeeFeedback = () => {
     fetchData();
   }, []);
 
+  const deleteFeedback = async (id) => {
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      await axios.delete(`http://localhost:5000/api/feedback/delete-feedback/${id}`, config);
+      alert('Feedback deleted successfully');
+    // refresh 
+    window.location.reload();
+    }
+    catch (error) {
+      console.error('Error deleting order:', error);
+    }
+
+  }
+
+
+
+
   return (
-    <div className="custom-feedback-scroll">
+    <div className="custom-feedback-scroll ">
       <NavBar />
       <FeedbackContainer>
       <div className='mt-5 justify-content-center align-items-center d-flex '>
@@ -68,7 +91,7 @@ const SeeFeedback = () => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <CardContainer>
+          <CardContainer className='d-flex justify-content-center align-items-center'>
             {feedbackData.map((feedback, index) => (
               <Card key={index}>
                 <div className="card-body text-center">
@@ -77,6 +100,8 @@ const SeeFeedback = () => {
                     <strong>Email:</strong> {feedback.email}<br />
                     <strong>Subject:</strong> {feedback.subject}<br />
                     <strong>Message:</strong> {feedback.message}<br />
+                    <button className="btn btn-danger btn-sm" onClick={() => deleteFeedback(feedback._id)}>Delete Feedback</button>
+                      
                     
 
                     
