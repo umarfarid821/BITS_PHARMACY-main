@@ -12,6 +12,7 @@ const CheckoutPage = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [totalProducts, setTotalProducts] = useState(0);
 
   useEffect(() => {
     // Fetch cart items and total amount from the server
@@ -21,9 +22,15 @@ const CheckoutPage = () => {
         console.log("Cart Data:", response.data);
         if (response.data && Array.isArray(response.data)) {
           setCartItems(response.data);
+          console.log("Cart Items:", response.data);
           // Calculate total amount based on cart items
           const total = response.data.reduce((total, item) => total + item.Productprice * item.Noofproducts, 0);
           setTotalAmount(total);
+
+          const totalProductsinCart = response.data.reduce((acc, item) => acc + item.Noofproducts, 0);
+          setTotalProducts(totalProductsinCart);
+
+
         }
       } catch (error) {
         console.error("Error fetching cart data:", error);
@@ -71,6 +78,10 @@ const CheckoutPage = () => {
         }
       );
       console.log('Order Placed:', placeOrderResponse.data);
+
+     
+
+
 
     const orderData = {
         shippingAddress,
@@ -122,11 +133,11 @@ const CheckoutPage = () => {
   
   
   return (
-   <div>
+   <div  className="shipping-scroll">
     <Navbar />
    <div className="checkout-container">
       
-   <h2>Checkout</h2>
+   <h2 className="text-center">Checkout</h2>
 
    <div className="shipping-address">
      <h3>Shipping Address</h3>
@@ -146,10 +157,11 @@ const CheckoutPage = () => {
    </div>
    <div className="order-summary">
      <h3>Order Summary</h3>
-     <ul>
+      <p>Total Products: {totalProducts}</p>
+     <ul >
        {cartItems.map((item) => (
-         <li key={item._id}>
-           {item.name} - Quantity: {item.Noofproducts}
+         <li key={item._id}  className="text-black" >
+           {item.Productname} - Quantity: {item.Noofproducts}
          </li>
        ))}
      </ul>

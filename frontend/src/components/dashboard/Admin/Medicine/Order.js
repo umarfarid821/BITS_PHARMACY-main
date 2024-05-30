@@ -29,6 +29,7 @@ const Card = () => {
         },
       });
       const ordersData = response.data;
+      console.log(ordersData);
       setOrders(ordersData);
       calculateTotals(ordersData);
 
@@ -222,11 +223,11 @@ const Card = () => {
                           )}
                           <p>Payment Method: {order.paymentMethod}</p>
                           <div>
-                            <p>Items:</p>
+                            <p>Items:   </p>
                             <ul>
                               {order.cartItems.map((item) => (
                                 <li key={item._id}>
-                                  {item.name} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
+                                  {item.Productname} - Price: ${item.Productprice} - Quantity: {item.Noofproducts}
                                 </li>
                               ))}
                             </ul>

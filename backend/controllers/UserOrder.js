@@ -3,15 +3,14 @@ const pastproductCart = require('../models/pastproductCart');
 
 const productCart = require('../models/productCart');
 const AddToOrder = async (req, res) => {
-   
     const { shippingAddress, paymentMethod, cartItems, totalAmount } = req.body;
     console.log(req.body);
+    
     try {
       const UserEmail = req.email; // Retrieve the user's email from the request
-      
+  
       // Create a new order document
       const newOrder = new UserOrder({
-        
         UserEmail, // Save the user's email in the order
         shippingAddress,
         paymentMethod,
@@ -21,34 +20,34 @@ const AddToOrder = async (req, res) => {
   
       // Save the order to the database
       const savedOrder = await newOrder.save();
-  
       res.status(201).json({ message: "Order placed successfully", order: savedOrder });
-      const  productcartorder = await productCart.find({ UserEmail });
-        
-       
-            productcartorder.forEach(async item => {
-                console.log(item.Productname, item.Productprice, item.Noofproducts);
-                const pastCartItem = new pastproductCart({
-                    UserEmail,
-                    Productname: item.Productname,
-                    Productprice: item.Productprice,
-                    Noofproducts: item.Noofproducts,
-                   
-                });
-                await pastCartItem.save();
-               
-            });
-            
-         await productCart.deleteMany({ UserEmail });
-      
   
-
-
+      // Move items from current cart to past cart
+      const productcartorder = await productCart.find({ UserEmail });
+      for (const item of productcartorder) {
+        console.log(item.Productname, item.Productprice, item.Noofproducts);
+        const pastCartItem = new pastproductCart({
+          UserEmail,
+          Productname: item.Productname,
+          Productprice: item.Productprice,
+          Noofproducts: item.Noofproducts,
+        });
+        await pastCartItem.save();
+      }
+      console.log("Order placed successfully");
+  
+      // Delete the cart items
+      for (const item of cartItems) {
+        console.log('Deleting item with id:', item._id);
+        await productCart.findByIdAndRemove(item._id);
+      }
+  
     } catch (error) {
       console.error("Error placing order:", error);
       res.status(500).json({ message: "Error placing order" });
     }
-    }
+  }
+  
     //get order 
     const getOrder = async (req, res) => {
         try {

@@ -74,7 +74,11 @@ const WorkerList = () => {
         },
       });
       console.log(response.data);
-      console.log(response.data);
+
+      alert("Order status updated successfully");
+
+
+
     } catch (error) {
       console.error("Error fetching sellers:", error);
     }
